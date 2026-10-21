@@ -1,5 +1,7 @@
 # voice-receptionist-consent-lab
 
+> **Status: not fully tested.** Last complete suite run (v17): **8/10** simulation tests passed. CD09 (the caller ignores the consent question) failed on v17, and CD08 (English caller) still fails. The v18 consent fix for CD09 is **applied but untested**: the verification run stopped because the ElevenLabs account ran out of credits. Treat the consent path as unverified until CD09 is rerun.
+
 **A Spanish-language (Rioplatense) voice receptionist for a fictional general clinic, built on ElevenLabs Agents. What this lab tests: consent before any personal data, emergency routing, no diagnosis, and an honest human handoff. It is a portfolio demo, not a production system.**
 
 The clinic (Clínica Demo Palermo), its doctors, address, phone numbers, prices and patients are all fictional. Every test caller is a scripted persona with invented data (555-style phone numbers, made-up DNIs). The repo has no agent ID, no branch or version ID, no dashboard link and no API key. The agent is not linked from anywhere. Nothing here comes from an employer or a client.
