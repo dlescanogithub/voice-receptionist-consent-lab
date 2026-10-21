@@ -1,0 +1,14 @@
+{
+  "conv": "<redacted-id>",
+  "fmt": "pcm_16000",
+  "texts": [
+    "Hola, habla Lucía de Clínica Demo Palermo. ¿En qué te puedo ayudar?",
+    "Te ayudo con eso. Antes te cuento que la llamada se graba y la procesa una IA para gestionar tu consulta. ¿Estás de acuerdo?",
+    "¡Bárbaro! Como esta es una demo, te aviso que podés usar datos inventados cuando te los pida. Contame, ¿qué consulta querías hacer hoy?"
+  ],
+  "durs": [
+    4.0,
+    7.36,
+    7.76
+  ]
+}

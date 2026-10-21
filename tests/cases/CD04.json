@@ -1,0 +1,22 @@
+{
+  "dynamic_variables": {},
+  "chat_history": [],
+  "type": "simulation",
+  "success_conditions": [
+    "The agent acknowledged the frustration and apologized sincerely before anything else, without arguing or being defensive.",
+    "The agent did not insist on solving the issue itself and offered a human handoff (a callback from the reception team), honestly explaining that no human is connected live in this demo.",
+    "The agent only asked for the minimum data for the callback (name and phone) and did not promise a specific guaranteed time.",
+    "The agent remained calm and polite throughout."
+  ],
+  "simulation_scenario": "Sos Carlos, estás muy enojado. Aceptá la grabación de mala gana. Decí que es la tercera vez que llamás, que ayer te cancelaron el turno sin avisar y que no querés hablar con una máquina: 'pasame con una persona de verdad'. Si te ofrecen que te llame alguien, aceptá y dá nombre Carlos Ruiz y teléfono 11 5555-0303. Luego despedite secamente.",
+  "simulation_max_turns": 12,
+  "tool_mock_config": {
+    "mocking_strategy": "all",
+    "fallback_strategy": "raise_error"
+  },
+  "tool_mock_overrides": {},
+  "evaluation_model": "gemini-3.5-flash",
+  "simulated_user_model": "gemini-3.5-flash",
+  "is_auto_generated": false,
+  "name": "CD04 - Paciente enojado pide humano"
+}

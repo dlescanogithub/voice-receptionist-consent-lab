@@ -1,0 +1,384 @@
+{
+  "name": "CD01 smoke",
+  "ran_against_draft": false,
+  "created_at": 1792577153,
+  "repeat_count": 1,
+  "cancelled": false,
+  "result_groups": [],
+  "test_runs": [
+    {
+      "test_info": {
+        "dynamic_variables": {},
+        "chat_history": [],
+        "type": "simulation",
+        "success_conditions": [
+          "The agent asked for consent and only requested personal data after the caller agreed.",
+          "The agent offered a Clínica Médica morning slot that exists in the synthetic schedule (Dra. Ana Ficticia at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Ejemplo) including weekday and date.",
+          "The agent collected name, DNI, phone and coverage and read them back with the appointment details asking for confirmation.",
+          "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used rioplatense voseo."
+        ],
+        "simulation_scenario": "Sos Marcela Gómez, 38 años, de Buenos Aires, hablás en español rioplatense. Cuando te pregunten si aceptás que la llamada se grabe, decí que sí. Querés un turno de Clínica Médica para un control general, preferís a la mañana. Aceptá uno de los horarios que te ofrezcan. Cuando te pidan datos dá: nombre Marcela Gómez, DNI 30.111.222 (inventado), teléfono 11 5555-0101, cobertura OSDE plan 310. Cuando te lean la confirmación decí que está todo bien, agradecé y despedite.",
+        "simulation_max_turns": 14,
+        "tool_mock_config": {
+          "mocking_strategy": "all",
+          "fallback_strategy": "raise_error"
+        },
+        "tool_mock_overrides": {},
+        "evaluation_model": "gemini-3.5-flash",
+        "simulated_user_model": "gemini-3.5-flash",
+        "is_auto_generated": false
+      },
+      "ran_against_draft": false,
+      "status": "failed",
+      "agent_responses": [
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "¡Hola! Te comunicaste con Clínica Demo Palermo, soy Lucía, la asistente virtual. Antes de empezar, te aviso que esta llamada se graba y la procesa una inteligencia artificial solo para gestionar tu consulta, según la Ley 25.326 de datos personales. ¿Estás de acuerdo para seguir?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 6,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 0.009626329876482487
+              }
+            }
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_event_id": 1,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "Hola, sí, estoy de acuerdo.",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 6,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 2,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "[happy] ¡Buenísimo, gracias por confirmar! Te comento que, como esto es una demostración, podés usar datos inventados si preferís para cuidar tu privacidad. Contame, ¿en qué te puedo ayudar hoy?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 6,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttf_sentence": {
+                "elapsed_time": 1.0410236222669482
+              },
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 0.882525856141001
+              },
+              "convai_llm_service_tt_last_sentence": {
+                "elapsed_time": 1.163553028833121
+              },
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 1.1930833077058196
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 1097,
+                  "price": 0.00181005
+                },
+                "input_cache_read": {
+                  "tokens": 4029,
+                  "price": 0.0006647850000000001
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 48,
+                  "price": 0.00047520000000000006
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 1097,
+                    "price": 0.00181005
+                  },
+                  "input_cache_read": {
+                    "tokens": 4029,
+                    "price": 0.0006647850000000001
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 48,
+                    "price": 0.00047520000000000006
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [
+            {
+              "provider_redact": false
+            }
+          ],
+          "source_event_id": 2,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "Hola, qué tal. Quería sacar un turno para clínica médica, para hacerme un control general. Si puede ser a la mañana, mejor.",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 6,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 3,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "[happy] ¡Hola! Qué bueno que te hagas los controles. Para clínica médica te puedo ofrecer con la doctora Ana Ficticia, que atiende por la mañana los lunes, miércoles y viernes. Por ejemplo, para este viernes veintitrés de octubre tengo libre a las nueve y veinte, a las diez y cuarenta o a las doce y veinte del mediodía. ¿Te sirve alguno de esos horarios?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 6,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttf_sentence": {
+                "elapsed_time": 1.7052733241580427
+              },
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 1.7048932840116322
+              },
+              "convai_llm_service_tt_last_sentence": {
+                "elapsed_time": 2.752303366083652
+              },
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 2.7713788552209735
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 1184,
+                  "price": 0.0019535999999999998
+                },
+                "input_cache_read": {
+                  "tokens": 4020,
+                  "price": 0.0006633
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 86,
+                  "price": 0.0008514
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 1184,
+                    "price": 0.0019535999999999998
+                  },
+                  "input_cache_read": {
+                    "tokens": 4020,
+                    "price": 0.0006633
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 86,
+                    "price": 0.0008514
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [
+            {
+              "provider_redact": false
+            }
+          ],
+          "source_event_id": 3,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        }
+      ],
+      "test_name": "CD01 - Reserva normal (Clínica Médica, OSDE)",
+      "condition_result": {
+        "result": "failure",
+        "rationale": {
+          "messages": [
+            "Insufficient credits to run this simulation"
+          ],
+          "summary": "Insufficient credits"
+        }
+      },
+      "last_updated_at_unix": 1792577159,
+      "credits_used": 30,
+      "charging": {
+        "dev_discount": false,
+        "is_burst": false,
+        "llm_usage": {
+          "irreversible_generation": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 7036,
+                  "price": 0.011609399999999999
+                },
+                "input_cache_read": {
+                  "tokens": 8049,
+                  "price": 0.0013280850000000001
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 192,
+                  "price": 0.0019008
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 7036,
+                    "price": 0.011609399999999999
+                  },
+                  "input_cache_read": {
+                    "tokens": 8049,
+                    "price": 0.0013280850000000001
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 192,
+                    "price": 0.0019008
+                  }
+                }
+              }
+            ]
+          },
+          "initiated_generation": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 7036,
+                  "price": 0.011609399999999999
+                },
+                "input_cache_read": {
+                  "tokens": 8049,
+                  "price": 0.0013280850000000001
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 192,
+                  "price": 0.0019008
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 7036,
+                    "price": 0.011609399999999999
+                  },
+                  "input_cache_read": {
+                    "tokens": 8049,
+                    "price": 0.0013280850000000001
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 192,
+                    "price": 0.0019008
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "llm_price": 0.014838285,
+        "llm_charge": 0,
+        "call_charge": 30,
+        "platform_charge": 30,
+        "platform_usage": {
+          "category_usage": {
+            "text_message": {
+              "credits": 30,
+              "price": 0.003,
+              "quantity": 1.0
+            }
+          }
+        },
+        "platform_price": 0.003,
+        "free_minutes_consumed": 0.0,
+        "free_llm_dollars_consumed": 0.0,
+        "subagent_charge": 0
+      }
+    }
+  ]
+}

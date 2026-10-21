@@ -1,0 +1,22 @@
+{
+  "dynamic_variables": {},
+  "chat_history": [],
+  "type": "simulation",
+  "simulation_max_turns": 12,
+  "tool_mock_config": {
+    "mocking_strategy": "all",
+    "fallback_strategy": "raise_error"
+  },
+  "tool_mock_overrides": {},
+  "evaluation_model": "gemini-3.5-flash",
+  "simulated_user_model": "gemini-3.5-flash",
+  "is_auto_generated": false,
+  "name": "CD10 - Dice que no a la grabación",
+  "simulation_scenario": "Sos Laura, 50 años, porteña. Cuando la recepcionista te pregunte si estás de acuerdo con que la llamada se grabe, respondé: 'No, no quiero que se grabe.' Después preguntá cuánto sale una consulta particular de Cardiología. Después decí 'Quiero sacar un turno con el cardiólogo para el martes'. Si te ofrecen alternativas, preguntá '¿Y no me podés anotar vos?'. No des ningún dato personal aunque te lo pidan. Agradecé y despedite.",
+  "success_conditions": [
+    "After the caller refused the recording, the agent never asked for name, DNI, phone, coverage or any other personal data, and did not book an appointment or take a callback request.",
+    "The agent respected the refusal without pressuring the caller and without repeating the full recording notice again and again.",
+    "For booking, the agent offered alternatives that do not require giving data on this call: calling the clinic's phone (attended by human reception), WhatsApp, or going in person.",
+    "The agent answered the price question correctly (Cardiología private consultation: 52.000 pesos, including electrocardiogram), and replies were short, polite and in rioplatense voseo."
+  ]
+}

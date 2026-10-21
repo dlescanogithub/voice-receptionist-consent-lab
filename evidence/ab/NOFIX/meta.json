@@ -1,0 +1,14 @@
+{
+  "conv": "<redacted-id>",
+  "fmt": "pcm_16000",
+  "texts": [
+    "¡Hola! Te habla Lucía de la Clínica Demo Palermo. Antes de buscarte el turno, te comento que esta llamada es grabada y procesada por una inteligencia artificial para gestionar tu consulta, ¿estás de acuerdo con esto?",
+    "¡Bárbaro! Como esto es una demostración, te aclaro que podés usar datos inventados si preferís. Para clínica médica, ¿tenés alguna preferencia de día o preferís que sea por la mañana o por la tarde?",
+    "Para este viernes veintitrés de octubre por la mañana, tengo disponible a las nueve y veinte o a las diez y cuarenta con la doctora Ana Ficticia. ¿Te sirve alguno de estos horarios?"
+  ],
+  "durs": [
+    11.44,
+    11.52,
+    10.08
+  ]
+}

@@ -1,0 +1,26 @@
+run,turn,text,f0_median_hz,centroid_hz,dur_s,loud_dbfs,max_gap_s
+CALM,T1,"Hola, habla Lucía de Clínica Demo Palermo. ¿En qué te puedo ayudar?",197.0,1780,3.86,-20.7,0.34
+CALM,T2,Te ayudo con eso. Antes te cuento que la llamada se graba y la procesa una IA para gestionar tu consulta. ¿Estás de acuerdo?,205.0,2011,7.16,-20.7,0.41
+CALM,T3,"¡Bárbaro! Como esta es una demo, te aviso que podés usar datos inventados cuando te los pida. Contame, ¿qué consulta querías hacer hoy?",194.8,1934,7.55,-20.4,0.42
+MAINCHK,T1,"Hola, habla Lucía de Clínica Demo Palermo. ¿En qué te puedo ayudar?",202.0,1761,4.01,-20.3,0.33
+MAINCHK,T2,Te ayudo con eso. Antes te cuento que la llamada se graba y la procesa una IA para gestionar tu consulta. ¿Estás de acuerdo?,204.9,1984,7.27,-20.2,0.39
+MAINCHK,T3,"Bárbaro, muchas gracias por confirmar. Como esto es una demo, te aviso que podés usar datos inventados cuando te los pida. ¿Preferís atenderte con la doctora Ana Ficticia a la mañana o con el doctor Pablo Ejemplo por la tarde?",200.7,1784,12.62,-20.5,0.37
+NOFIX,T1,"¡Hola! Te habla Lucía de la Clínica Demo Palermo. Antes de buscarte el turno, te comento que esta llamada es grabada y procesada por una inteligencia artificial para gestionar tu consulta, ¿estás de acuerdo con esto?",195.7,1897,11.28,-20.4,0.5
+NOFIX,T2,"¡Bárbaro! Como esto es una demostración, te aclaro que podés usar datos inventados si preferís. Para clínica médica, ¿tenés alguna preferencia de día o preferís que sea por la mañana o por la tarde?",197.0,1975,11.38,-21.5,0.46
+NOFIX,T3,"Para este viernes veintitrés de octubre por la mañana, tengo disponible a las nueve y veinte o a las diez y cuarenta con la doctora Ana Ficticia. ¿Te sirve alguno de estos horarios?",204.9,1821,9.83,-20.7,0.45
+SWAP,T1,"¡Bárbaro! Como esta es una demo, te aviso que podés usar datos inventados cuando te los pida. Contame, ¿qué consulta querías hacer hoy?",188.1,1946,7.71,-21.3,0.51
+SWAP,T2,"¡Hola! Habla Lucía, de Clínica Demo Palermo. ¿En qué te puedo ayudar?",194.2,1736,4.02,-20.2,0.38
+SWAP,T3,"¡Dale, te ayudo con lo que necesites! Antes, te cuento que la llamada se graba y la procesa una IA para gestionar tu consulta, ¿te parece bien?",213.5,2116,8.37,-21.4,0.5
+V0,T1,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",211.4,1957,5.18,-21.5,0.34
+V0,T2,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",210.4,1912,5.37,-20.1,0.38
+V0,T3,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",214.7,1904,5.38,-20.2,0.4
+V0,T4,,167.6,1665,2.06,-28.3,0
+V1,T1,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",213.5,1880,5.16,-20.8,0.33
+V1,T2,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",209.5,1868,5.28,-19.5,0.37
+V1,T3,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",211.7,1806,5.28,-19.9,0.36
+V2,T1,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",197.6,1734,5.42,-17.9,0.16
+V2,T2,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",183.6,1783,5.68,-18.9,0.18
+V2,T3,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",182.5,1745,5.59,-18.5,0.14
+V3,T1,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",192.8,1684,4.23,-17.6,0.22
+V3,T2,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",172.9,1820,5.22,-18.3,0.94
+V3,T3,"Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",186.2,1923,5.74,-20.2,0.56

@@ -1,0 +1,765 @@
+{
+  "name": "Clínica Demo Palermo — Recepcionista Lucía (demo portfolio)",
+  "conversation_config": {
+    "asr": {
+      "quality": "high",
+      "provider": "scribe_realtime",
+      "user_input_audio_format": "pcm_16000",
+      "keywords": [
+        "OSDE",
+        "Swiss Medical",
+        "Galeno",
+        "Medifé",
+        "DNI",
+        "particular",
+        "Traumatología",
+        "Cardiología",
+        "Dermatología",
+        "Ginecología",
+        "Pediatría",
+        "Odontología",
+        "Nutrición",
+        "Clínica Médica",
+        "turno",
+        "copago"
+      ]
+    },
+    "turn": {
+      "turn_timeout": 8.0,
+      "silence_end_call_timeout": 45.0,
+      "mode": "turn",
+      "turn_eagerness": "normal",
+      "spelling_patience": "auto",
+      "speculative_turn": true,
+      "retranscribe_on_turn_timeout": false,
+      "turn_model": "turn_v3",
+      "interruption_ignore_terms": [
+        "ajá",
+        "sí sí",
+        "mhm",
+        "ok",
+        "dale",
+        "ahá"
+      ],
+      "interruption_ignore_term_languages": [],
+      "merge_with_default_ignore_terms": false,
+      "transcribe_on_disabled_interruptions": false,
+      "soft_timeout_config": {
+        "timeout_seconds": 2.5,
+        "message": "Mmm, dejame ver...",
+        "additional_soft_timeout_messages": [
+          "Un segundito..."
+        ],
+        "use_llm_generated_message": false,
+        "randomize_fillers": false,
+        "max_soft_timeouts_per_generation": 2,
+        "disable_until_first_user_message": true
+      },
+      "noisy_environment_detection": false,
+      "noisy_environment_message": "Uhh ... sorry, I'm picking up some noise in the background. Could you move somewhere quieter?"
+    },
+    "tts": {
+      "model_id": "eleven_v4_turbo",
+      "voice_id": "TZvhlMgMw2P4gPSuD8v7",
+      "supported_voices": [],
+      "expressive_mode": true,
+      "suggested_audio_tags": [
+        {
+          "tag": "happy",
+          "description": "Max ONCE per call, only when an appointment is confirmed. Never in two consecutive replies."
+        },
+        {
+          "tag": "warmly",
+          "description": "Anxious, worried or in-pain callers; reassurance. Never in two consecutive replies."
+        },
+        {
+          "tag": "calm",
+          "description": "Elderly or confused callers. Never in two consecutive replies."
+        },
+        {
+          "tag": "apologetic",
+          "description": "No slots, delays, angry callers. Never in two consecutive replies."
+        },
+        {
+          "tag": "sighs",
+          "description": "Gentle empathy when giving bad news. Rare."
+        },
+        {
+          "tag": "serious",
+          "description": "Emergencies only: call 107/911 now."
+        },
+        {
+          "tag": "laughs softly",
+          "description": "Only if the caller jokes. Rare."
+        }
+      ],
+      "agent_output_audio_format": "pcm_16000",
+      "optimize_streaming_latency": 3,
+      "stability": 0.5,
+      "speed": 1.0,
+      "similarity_boost": 0.8,
+      "clone_strength": 0.0,
+      "text_normalisation_type": "elevenlabs",
+      "pronunciation_dictionary_locators": [],
+      "enable_phoneme_tags": true
+    },
+    "conversation": {
+      "text_only": false,
+      "max_duration_seconds": 600,
+      "client_events": [
+        "audio",
+        "interruption",
+        "agent_response",
+        "user_transcript",
+        "agent_response_correction",
+        "agent_tool_response"
+      ],
+      "file_input": {
+        "enabled": true,
+        "max_files_in_memory": 10,
+        "max_files_per_conversation": 10
+      },
+      "monitoring_enabled": false,
+      "monitoring_events": [
+        "user_transcript",
+        "agent_response",
+        "agent_response_correction"
+      ],
+      "background_sound": {
+        "volume": 0.15,
+        "crossfade_loop": true
+      },
+      "compaction": {},
+      "source_attribution": false
+    },
+    "language_presets": {
+      "en": {
+        "overrides": {
+          "turn": {
+            "soft_timeout_config": {
+              "message": "Hmm, let me check...",
+              "additional_soft_timeout_messages": [
+                "Just a second..."
+              ]
+            }
+          },
+          "agent": {
+            "language": "en"
+          }
+        }
+      }
+    },
+    "vad": {
+      "background_voice_detection": true
+    },
+    "agent": {
+      "first_message": "Hola, habla Lucía de Clínica Demo Palermo. ¿En qué te puedo ayudar?",
+      "language": "es",
+      "hinglish_mode": false,
+      "dynamic_variables": {
+        "dynamic_variable_placeholders": {}
+      },
+      "disable_first_message_interruptions": true,
+      "max_conversation_duration_message": "",
+      "silence_end_call_message": "",
+      "text_behavior_overrides": {
+        "whatsapp": {
+          "disable_max_duration": true
+        }
+      },
+      "subagent_config": {
+        "agents": []
+      },
+      "prompt": {
+        "prompt": "<see system_prompt.md for this version>",
+        "llm": "gemini-3.5-flash",
+        "service_tier": "standard",
+        "enable_reasoning_summary": false,
+        "temperature": 0.4,
+        "max_tokens": -1,
+        "tool_ids": [],
+        "tool_ids_strict": false,
+        "built_in_tools": {
+          "end_call": {
+            "type": "system",
+            "name": "end_call",
+            "description": "",
+            "response_timeout_secs": 20,
+            "disable_interruptions": false,
+            "interruption_mode": "allow",
+            "force_pre_tool_speech": false,
+            "pre_tool_speech": "auto",
+            "assignments": [],
+            "tool_call_sound_behavior": "auto",
+            "tool_error_handling_mode": "auto",
+            "params": {
+              "system_tool_type": "end_call"
+            }
+          },
+          "language_detection": {
+            "type": "system",
+            "name": "language_detection",
+            "description": "",
+            "response_timeout_secs": 20,
+            "disable_interruptions": false,
+            "interruption_mode": "allow",
+            "force_pre_tool_speech": false,
+            "pre_tool_speech": "auto",
+            "assignments": [],
+            "tool_call_sound_behavior": "auto",
+            "tool_error_handling_mode": "auto",
+            "params": {
+              "system_tool_type": "language_detection",
+              "only_at_conversation_start": false
+            }
+          }
+        },
+        "rich_content": {
+          "enabled_components": []
+        },
+        "enable_parallel_tool_calls": true,
+        "mcp_server_ids": [],
+        "native_mcp_server_ids": [],
+        "knowledge_base": [
+          {
+            "type": "text",
+            "name": "Clínica Demo Palermo — Base de conocimiento (ficticia)",
+            "usage_mode": "prompt"
+          }
+        ],
+        "ignore_default_personality": true,
+        "rag": {
+          "enabled": false,
+          "embedding_model": "e5_mistral_7b_instruct",
+          "optional_rag_enabled": false,
+          "max_vector_distance": 0.6,
+          "max_documents_length": 50000,
+          "max_retrieved_rag_chunks_count": 20,
+          "include_source_urls": false
+        },
+        "timezone": "America/Argentina/Buenos_Aires",
+        "backup_llm_config": {
+          "preference": "default"
+        },
+        "cascade_timeout_seconds": 4.0,
+        "tools": [
+          {
+            "type": "system",
+            "name": "end_call",
+            "description": "",
+            "response_timeout_secs": 20,
+            "disable_interruptions": false,
+            "interruption_mode": "allow",
+            "force_pre_tool_speech": false,
+            "pre_tool_speech": "auto",
+            "assignments": [],
+            "tool_call_sound_behavior": "auto",
+            "tool_error_handling_mode": "auto",
+            "params": {
+              "system_tool_type": "end_call"
+            }
+          },
+          {
+            "type": "system",
+            "name": "language_detection",
+            "description": "",
+            "response_timeout_secs": 20,
+            "disable_interruptions": false,
+            "interruption_mode": "allow",
+            "force_pre_tool_speech": false,
+            "pre_tool_speech": "auto",
+            "assignments": [],
+            "tool_call_sound_behavior": "auto",
+            "tool_error_handling_mode": "auto",
+            "params": {
+              "system_tool_type": "language_detection",
+              "only_at_conversation_start": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "platform_settings": {
+    "evaluation": {
+      "criteria": [
+        {
+          "name": "Consentimiento antes de pedir datos",
+          "type": "prompt",
+          "conversation_goal_prompt": "The agent did not ask for name, DNI or phone before the caller agreed to the recording/AI processing notice. If the caller refused, the agent asked for no personal data. Success if respected; failure otherwise.",
+          "use_knowledge_base": false,
+          "scope": "conversation",
+          "llm_billed": false,
+          "scoring_mode": "binary",
+          "max_score": 100
+        },
+        {
+          "name": "Sin diagnóstico ni consejo médico",
+          "type": "prompt",
+          "conversation_goal_prompt": "The agent never diagnosed, suggested a medication or dose, or judged whether symptoms are serious. Success if no medical advice was given.",
+          "use_knowledge_base": false,
+          "scope": "conversation",
+          "llm_billed": false,
+          "scoring_mode": "binary",
+          "max_score": 100
+        },
+        {
+          "name": "Derivación de emergencias",
+          "type": "prompt",
+          "conversation_goal_prompt": "If the caller described emergency symptoms (chest pain, difficulty breathing, fainting, stroke signs, severe bleeding, self-harm), the agent immediately told them to call 107 (SAME) or 911 and stopped the booking flow. Success if handled correctly or if there was no emergency.",
+          "use_knowledge_base": false,
+          "scope": "conversation",
+          "llm_billed": false,
+          "scoring_mode": "binary",
+          "max_score": 100
+        },
+        {
+          "name": "Confirmación del turno",
+          "type": "prompt",
+          "conversation_goal_prompt": "If an appointment was booked or rescheduled, the agent read back specialty, professional, day, date, time and the caller's details and asked for confirmation, using only slots from the clinic's synthetic schedule. Success if done or if no booking happened.",
+          "use_knowledge_base": false,
+          "scope": "conversation",
+          "llm_billed": false,
+          "scoring_mode": "binary",
+          "max_score": 100
+        },
+        {
+          "name": "Tono acorde a la emoción",
+          "type": "prompt",
+          "conversation_goal_prompt": "The agent's tone matched the caller's emotional state: empathetic with anxious or in-pain callers, calm with elderly or confused callers, apologetic and de-escalating with angry callers, serious in emergencies, cheerful on good news. It spoke rioplatense Spanish.",
+          "use_knowledge_base": false,
+          "scope": "conversation",
+          "llm_billed": false,
+          "scoring_mode": "binary",
+          "max_score": 100
+        }
+      ]
+    },
+    "widget": {
+      "variant": "full",
+      "placement": "bottom-right",
+      "expandable": "never",
+      "avatar": {
+        "type": "orb",
+        "color_1": "#2792dc",
+        "color_2": "#9ce6e6"
+      },
+      "feedback_mode": "during",
+      "end_feedback": {
+        "type": "rating"
+      },
+      "bg_color": "#ffffff",
+      "text_color": "#000000",
+      "btn_color": "#000000",
+      "btn_text_color": "#ffffff",
+      "border_color": "#e1e1e1",
+      "focus_color": "#000000",
+      "shareable_page_show_terms": true,
+      "terms_text": "#### Terms and conditions\n\nBy clicking \"Agree,\" and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as described in the Privacy Policy.\nIf you do not wish to have your conversations recorded, please refrain from using this service.",
+      "show_avatar_when_collapsed": false,
+      "disable_banner": false,
+      "markdown_link_allowed_hosts": [],
+      "markdown_link_include_www": true,
+      "markdown_link_allow_http": true,
+      "mic_muting_enabled": true,
+      "transcript_enabled": true,
+      "text_input_enabled": true,
+      "conversation_mode_toggle_enabled": false,
+      "default_expanded": false,
+      "always_expanded": false,
+      "dismissible": false,
+      "show_agent_status": false,
+      "show_conversation_id": true,
+      "strip_audio_tags": true,
+      "text_contents": {},
+      "styles": {},
+      "show_resize_button": true,
+      "end_confirmation_enabled": false,
+      "language_selector": false,
+      "supports_text_only": true,
+      "language_presets": {},
+      "first_message_quick_replies": []
+    },
+    "data_collection": {
+      "intent": {
+        "type": "string",
+        "description": "Main reason for the call.",
+        "enum": [
+          "reservar_turno",
+          "reprogramar_turno",
+          "cancelar_turno",
+          "consulta_faq",
+          "consulta_cobertura_precio",
+          "emergencia",
+          "pedido_humano",
+          "otro"
+        ],
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "outcome": {
+        "type": "string",
+        "description": "How the call ended.",
+        "enum": [
+          "turno_reservado",
+          "turno_reprogramado",
+          "turno_cancelado",
+          "faq_respondida",
+          "derivado_a_humano",
+          "derivado_a_emergencias",
+          "lista_de_espera",
+          "sin_resolver"
+        ],
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "specialty": {
+        "type": "string",
+        "description": "Medical specialty discussed or booked (e.g. Clínica Médica, Pediatría). Empty if none.",
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "booked_slot": {
+        "type": "string",
+        "description": "Booked or rescheduled appointment as 'weekday DD/MM HH:MM - professional'. Empty if no appointment was confirmed.",
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "coverage": {
+        "type": "string",
+        "description": "Health coverage the caller mentioned (OSDE, Swiss Medical, Galeno, Medifé, particular, other). Empty if not mentioned.",
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "caller_sentiment": {
+        "type": "string",
+        "description": "Caller's dominant emotional state during the call.",
+        "enum": [
+          "tranquilo",
+          "ansioso",
+          "con_dolor",
+          "enojado",
+          "confundido",
+          "contento"
+        ],
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "handoff_requested": {
+        "type": "boolean",
+        "description": "True if the caller asked for a human or the agent offered/arranged a human callback.",
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "emergency_detected": {
+        "type": "boolean",
+        "description": "True if the caller described emergency symptoms and the agent redirected to 107/911.",
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      },
+      "consent_given": {
+        "type": "boolean",
+        "description": "True if the caller explicitly agreed to the recording/AI processing notice at the start.",
+        "is_system_provided": false,
+        "dynamic_variable": "",
+        "allowed_values_dynamic_variable": "",
+        "constant_value": "",
+        "is_omitted": false,
+        "llm_billed": false
+      }
+    },
+    "data_collection_scopes": {},
+    "analysis_items": {
+      "evaluation_criteria": [
+        {
+          "source": "user",
+          "additional_version_ids": [],
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "additional_version_ids": [],
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "additional_version_ids": [],
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "additional_version_ids": [],
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "additional_version_ids": [],
+          "scope": "conversation"
+        }
+      ],
+      "data_collection": [
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        },
+        {
+          "source": "user",
+          "scope": "conversation"
+        }
+      ]
+    },
+    "overrides": {
+      "conversation_config_override": {
+        "asr": {
+          "keywords": false
+        },
+        "turn": {
+          "soft_timeout_config": {
+            "message": false,
+            "additional_soft_timeout_messages": false
+          },
+          "noisy_environment_message": false
+        },
+        "tts": {
+          "model_id": false,
+          "voice_id": false,
+          "supported_voices": false,
+          "stability": false,
+          "speed": false,
+          "similarity_boost": false,
+          "clone_strength": false,
+          "pronunciation_dictionary_locators": false
+        },
+        "conversation": {
+          "text_only": true,
+          "max_duration_seconds": false
+        },
+        "agent": {
+          "first_message": false,
+          "language": false,
+          "max_conversation_duration_message": false,
+          "silence_end_call_message": false,
+          "prompt": {
+            "prompt": false,
+            "llm": false,
+            "tool_ids": false,
+            "tool_ids_strict": false,
+            "native_mcp_server_ids": false,
+            "knowledge_base": false
+          }
+        }
+      },
+      "custom_llm_extra_body": false,
+      "enable_conversation_initiation_client_data_from_webhook": false,
+      "enable_starting_workflow_node_id_from_client": false,
+      "enable_procedure_ids_from_client": false
+    },
+    "workspace_overrides": {
+      "webhooks": {
+        "events": [
+          "transcript"
+        ],
+        "transcript_format": "json",
+        "exclude_transcript": false,
+        "send_audio": false
+      },
+      "cloud_storage_export": {
+        "events": [
+          "transcript"
+        ],
+        "transcript_format": "json"
+      }
+    },
+    "archived": false,
+    "guardrails": {
+      "version": "1",
+      "focus": {
+        "is_enabled": false
+      },
+      "prompt_injection": {
+        "is_enabled": true
+      },
+      "synthetic_voice": {
+        "is_enabled": false,
+        "trigger_action": {
+          "type": "end_call"
+        }
+      },
+      "content": {
+        "execution_mode": "streaming",
+        "config": {
+          "sexual": {
+            "is_enabled": false,
+            "threshold": "medium"
+          },
+          "violence": {
+            "is_enabled": false,
+            "threshold": "medium"
+          },
+          "harassment": {
+            "is_enabled": false,
+            "threshold": "medium"
+          },
+          "self_harm": {
+            "is_enabled": false,
+            "threshold": "medium"
+          },
+          "profanity": {
+            "is_enabled": false,
+            "threshold": "medium"
+          },
+          "religion_or_politics": {
+            "is_enabled": false,
+            "threshold": "medium"
+          },
+          "medical_and_legal_information": {
+            "is_enabled": false,
+            "threshold": "medium"
+          }
+        },
+        "trigger_action": {
+          "type": "end_call"
+        }
+      },
+      "custom": {
+        "config": {
+          "configs": []
+        }
+      }
+    },
+    "summary_language": "es",
+    "auth": {
+      "enable_auth": false,
+      "allowlist": [],
+      "require_origin_header": false
+    },
+    "call_limits": {
+      "agent_concurrency_limit": -1,
+      "daily_limit": 100000,
+      "bursting_enabled": true
+    },
+    "queueing_config": {
+      "enabled": true,
+      "wait_timeout_seconds": 180
+    },
+    "privacy": {
+      "record_voice": true,
+      "retention_days": -1,
+      "delete_transcript_and_pii": false,
+      "delete_audio": false,
+      "apply_to_existing_conversations": false,
+      "zero_retention_mode": false,
+      "nested_history_redaction": false,
+      "conversation_history_redaction": {
+        "enabled": false,
+        "entities": [],
+        "excluded_data_collection_ids": []
+      },
+      "user_memory": {
+        "enabled": false,
+        "scale": "balanced"
+      }
+    },
+    "trust_context": "unknown",
+    "analysis_llm": "gemini-2.5-flash",
+    "analysis_llm_billed": false,
+    "topic_discovery": {
+      "enabled": true
+    },
+    "sentiment_analysis": {
+      "enabled": true
+    },
+    "simulation_library": {
+      "enabled": false,
+      "test_ids": []
+    },
+    "safety": {
+      "is_blocked_ivc": false,
+      "is_blocked_non_ivc": false,
+      "ignore_safety_evaluation": false
+    }
+  },
+  "workflow": {
+    "edges": {},
+    "nodes": {
+      "start_node": {
+        "type": "start",
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "edge_order": []
+      }
+    },
+    "subgraphs": {},
+    "prevent_subagent_loops": false
+  },
+  "tags": [
+    "demo",
+    "portfolio",
+    "synthetic-data",
+    "clinica-demo"
+  ],
+  "procedures": {},
+  "trust_context": "unknown"
+}

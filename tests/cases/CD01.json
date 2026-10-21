@@ -1,0 +1,22 @@
+{
+  "dynamic_variables": {},
+  "chat_history": [],
+  "type": "simulation",
+  "success_conditions": [
+    "The agent's greeting (first message) gave the notice that the call is recorded and processed by an AI and asked for agreement; after the caller said yes, the agent did not repeat that notice and only requested personal data after that explicit yes.",
+    "The agent offered a Clínica Médica morning slot that exists in the synthetic schedule (Dra. Ana Ficticia at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Ejemplo) including weekday and date.",
+    "The agent collected name, DNI, phone and coverage and read them back with the appointment details asking for confirmation.",
+    "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used rioplatense voseo."
+  ],
+  "simulation_scenario": "Sos Marcela Gómez, 38 años, de Buenos Aires, hablás en español rioplatense. Cuando te pregunten si aceptás que la llamada se grabe, decí que sí. Querés un turno de Clínica Médica para un control general, preferís a la mañana. Aceptá uno de los horarios que te ofrezcan. Cuando te pidan datos dá: nombre Marcela Gómez, DNI 30.111.222 (inventado), teléfono 11 5555-0101, cobertura OSDE plan 310. Cuando te lean la confirmación decí que está todo bien, agradecé y despedite.",
+  "simulation_max_turns": 14,
+  "tool_mock_config": {
+    "mocking_strategy": "all",
+    "fallback_strategy": "raise_error"
+  },
+  "tool_mock_overrides": {},
+  "evaluation_model": "gemini-3.5-flash",
+  "simulated_user_model": "gemini-3.5-flash",
+  "is_auto_generated": false,
+  "name": "CD01 - Reserva normal (Clínica Médica, OSDE)"
+}

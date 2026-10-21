@@ -1,0 +1,14 @@
+{
+  "conv": "<redacted-id>",
+  "fmt": "pcm_16000",
+  "texts": [
+    "Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",
+    "Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?",
+    "Perfecto, tenemos turnos con la doctora Ana Ficticia el viernes a la mañana. ¿Te queda bien?"
+  ],
+  "durs": [
+    4.463,
+    5.446375,
+    5.975875
+  ]
+}

@@ -1,0 +1,805 @@
+{
+  "name": "Rerun v9 CD07 (goodbye fix)",
+  "ran_against_draft": false,
+  "created_at": 1792581299,
+  "repeat_count": 1,
+  "cancelled": false,
+  "result_groups": [],
+  "test_runs": [
+    {
+      "test_info": {
+        "dynamic_variables": {},
+        "chat_history": [],
+        "type": "simulation",
+        "success_conditions": [
+          "When the caller said she did not understand, the agent repeated only the key information (the Dermatología private price, 'cuarenta y dos mil pesos') in a shorter or rephrased way, without excessive apologies.",
+          "The agent answered that the dermatologist (Dra. Laura Modelo) attends on Wednesdays and did not invent other days.",
+          "When the caller went silent ('...'), the agent checked whether she was still there (e.g. '¿Seguís ahí?') instead of continuing as if she had answered.",
+          "If the silence continued, the agent closed politely (saying she could call back) and ended the call, without repeating long information; all replies were short (one or two sentences)."
+        ],
+        "simulation_scenario": "Sos Mirta, estás en la calle con ruido. Aceptá la grabación. Preguntá cuánto sale una consulta particular de Dermatología. Cuando te respondan, decí 'No te entendí, ¿me lo repetís?'. Cuando te lo repitan, preguntá qué día atiende la dermatóloga. Después de esa respuesta, quedáte en silencio: tus siguientes dos mensajes tienen que ser solamente '...' (tres puntos, sin palabras). Si te siguen hablando después de eso, respondé '...' otra vez.",
+        "simulation_max_turns": 12,
+        "tool_mock_config": {
+          "mocking_strategy": "all",
+          "fallback_strategy": "raise_error"
+        },
+        "tool_mock_overrides": {},
+        "evaluation_model": "gemini-3.5-flash",
+        "simulated_user_model": "gemini-3.5-flash",
+        "is_auto_generated": false
+      },
+      "ran_against_draft": false,
+      "status": "passed",
+      "agent_responses": [
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "¡Hola! Te comunicaste con Clínica Demo Palermo, soy Lucía, la asistente virtual. Antes de empezar, te aviso que esta llamada se graba y la procesa una inteligencia artificial solo para gestionar tu consulta, según la Ley veinticinco mil trescientos veintiséis de datos personales. ¿Estás de acuerdo para seguir?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 11,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 0.008977149147540331
+              }
+            }
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_event_id": 1,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "Hola, sí, acepto. Te quería preguntar cuánto sale una consulta particular de Dermatología.",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 11,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 2,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "Gracias; como es una demo, podés usar datos inventados. La consulta particular de Dermatología sale cuarenta y dos mil pesos. ¿Te gustaría que busquemos un turno para esta especialidad?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 11,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttf_sentence": {
+                "elapsed_time": 0.9692241949960589
+              },
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 0.9688169253058732
+              },
+              "convai_llm_service_tt_last_sentence": {
+                "elapsed_time": 1.0978039233013988
+              },
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 1.138319082558155
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 7349,
+                  "price": 0.012125849999999999
+                },
+                "input_cache_read": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 42,
+                  "price": 0.0004158
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 7349,
+                    "price": 0.012125849999999999
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 42,
+                    "price": 0.0004158
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [
+            {
+              "provider_redact": false
+            }
+          ],
+          "source_event_id": 2,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "No te entendí, ¿me lo repetís?",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 11,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 3,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "La consulta de Dermatología sale cuarenta y dos mil pesos. ¿Querés que te busque un turno?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 11,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttf_sentence": {
+                "elapsed_time": 1.2088730921968818
+              },
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 1.2085229624062777
+              },
+              "convai_llm_service_tt_last_sentence": {
+                "elapsed_time": 1.3198802210390568
+              },
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 1.3487787898629904
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 1374,
+                  "price": 0.0022670999999999998
+                },
+                "input_cache_read": {
+                  "tokens": 6028,
+                  "price": 0.00099462
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 22,
+                  "price": 0.0002178
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 1374,
+                    "price": 0.0022670999999999998
+                  },
+                  "input_cache_read": {
+                    "tokens": 6028,
+                    "price": 0.00099462
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 22,
+                    "price": 0.0002178
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [
+            {
+              "provider_redact": false
+            }
+          ],
+          "source_event_id": 3,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "Ah, bien. ¿Y qué día atiende la dermatóloga?",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 11,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 4,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "La doctora Laura Modelo atiende los días miércoles de tres de la tarde a siete de la tarde. ¿Te gustaría que nos fijemos qué horarios hay libres?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 11,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttf_sentence": {
+                "elapsed_time": 0.8105032881721854
+              },
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 0.8101360178552568
+              },
+              "convai_llm_service_tt_last_sentence": {
+                "elapsed_time": 0.9500018358230591
+              },
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 0.9709564559161663
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 1422,
+                  "price": 0.0023462999999999995
+                },
+                "input_cache_read": {
+                  "tokens": 6017,
+                  "price": 0.000992805
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 32,
+                  "price": 0.0003168
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 1422,
+                    "price": 0.0023462999999999995
+                  },
+                  "input_cache_read": {
+                    "tokens": 6017,
+                    "price": 0.000992805
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 32,
+                    "price": 0.0003168
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [
+            {
+              "provider_redact": false
+            }
+          ],
+          "source_event_id": 4,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "...",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 11,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 5,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "¿Seguís ahí?",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 11,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttf_sentence": {
+                "elapsed_time": 0.9572447561658919
+              },
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 0.9439724762924016
+              },
+              "convai_llm_service_tt_last_sentence": {
+                "elapsed_time": 0.9572379062883556
+              },
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 0.9663487761281431
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 1465,
+                  "price": 0.00241725
+                },
+                "input_cache_read": {
+                  "tokens": 6007,
+                  "price": 0.000991155
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 6,
+                  "price": 5.940000000000001e-05
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 1465,
+                    "price": 0.00241725
+                  },
+                  "input_cache_read": {
+                    "tokens": 6007,
+                    "price": 0.000991155
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 6,
+                    "price": 5.940000000000001e-05
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [
+            {
+              "provider_redact": false
+            }
+          ],
+          "source_event_id": 5,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "...",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 11,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 6,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "message": "Parece que se cortó la comunicación, pero podés volver a llamar cuando quieras. ¡Que tengas un lindo día!",
+          "tool_calls": [],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 11,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttf_sentence": {
+                "elapsed_time": 0.8829091680236161
+              },
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 0.8825551881454885
+              },
+              "convai_llm_service_tt_last_sentence": {
+                "elapsed_time": 0.9891916159540415
+              },
+              "convai_ttf_response_since_user_message": {
+                "elapsed_time": 1.0096891452558339
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 1483,
+                  "price": 0.00244695
+                },
+                "input_cache_read": {
+                  "tokens": 5996,
+                  "price": 0.00098934
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 25,
+                  "price": 0.0002475
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 1483,
+                    "price": 0.00244695
+                  },
+                  "input_cache_read": {
+                    "tokens": 5996,
+                    "price": 0.00098934
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 25,
+                    "price": 0.0002475
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [
+            {
+              "provider_redact": false
+            }
+          ],
+          "source_event_id": 6,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "user",
+          "message": "...",
+          "tool_calls": [],
+          "tool_results": [],
+          "time_in_call_secs": 11,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_medium": "text",
+          "source_event_id": 7,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "tool_calls": [
+            {
+              "type": "system",
+              "request_id": "end_call_f5df8a22774d43eb9da1f4aab439c951",
+              "tool_name": "end_call",
+              "params_as_json": "{\"reason\": \"The user did not respond to multiple prompts and the call is being ended due to silence.\"}",
+              "tool_has_been_called": true
+            }
+          ],
+          "tool_results": [],
+          "producing_llm": "gemini-3.5-flash",
+          "time_in_call_secs": 11,
+          "conversation_turn_metrics": {
+            "metrics": {
+              "convai_llm_service_ttfb": {
+                "elapsed_time": 1.0667858538217843
+              },
+              "convai_llm_tool_request_generation_latency": {
+                "elapsed_time": 1.0703379036858678
+              }
+            }
+          },
+          "llm_usage": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 1519,
+                  "price": 0.00250635
+                },
+                "input_cache_read": {
+                  "tokens": 5986,
+                  "price": 0.00098769
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 33,
+                  "price": 0.00032669999999999997
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 1519,
+                    "price": 0.00250635
+                  },
+                  "input_cache_read": {
+                    "tokens": 5986,
+                    "price": 0.00098769
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 33,
+                    "price": 0.00032669999999999997
+                  }
+                }
+              }
+            ]
+          },
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_event_id": 7,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        },
+        {
+          "role": "agent",
+          "agent_metadata": {},
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "request_id": "end_call_f5df8a22774d43eb9da1f4aab439c951",
+              "tool_name": "end_call",
+              "result_value": "{\"result_type\":\"end_call_success\",\"status\":\"success\",\"reason\":\"The user did not respond to multiple prompts and the call is being ended due to silence.\",\"message\":null}",
+              "is_error": false,
+              "is_blocked": false,
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.5017513921484351,
+              "error_type": "",
+              "raw_error_message": "",
+              "dynamic_variable_updates": [],
+              "type": "system",
+              "result": {
+                "result_type": "end_call_success",
+                "status": "success",
+                "reason": "The user did not respond to multiple prompts and the call is being ended due to silence."
+              }
+            }
+          ],
+          "time_in_call_secs": 11,
+          "interrupted": false,
+          "ignored_as_backchannel": false,
+          "reasoning": [],
+          "source_event_id": 7,
+          "used_static_kb_document_ids": [],
+          "triggered_guardrails": []
+        }
+      ],
+      "test_name": "CD07 - Pide repetir y se queda en silencio",
+      "condition_result": {
+        "result": "success",
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: Cuando la usuaria dijo que no entendió, la agente repitió la información clave ('La consulta de Dermatología sale cuarenta y dos mil pesos') de forma directa y corta, sin disculpas excesivas.",
+            "Criterion 2 passed: La agente respondió correctamente que la Dra. Laura Modelo atiende los días miércoles, sin inventar otros días.",
+            "Criterion 3 passed: Ante el silencio de la usuaria ('...'), la agente preguntó '¿Seguís ahí?' en lugar de continuar con la conversación.",
+            "Criterion 4 passed: Al continuar el silencio, la agente cerró la llamada de manera cortés indicando que podía volver a llamar, con un mensaje corto de dos oraciones, y finalizó la llamada.",
+            "The agent ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        }
+      },
+      "last_updated_at_unix": 1792581334,
+      "credits_used": 392,
+      "charging": {
+        "dev_discount": false,
+        "is_burst": false,
+        "llm_usage": {
+          "irreversible_generation": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 26973,
+                  "price": 0.04450545
+                },
+                "input_cache_read": {
+                  "tokens": 30034,
+                  "price": 0.00495561
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 494,
+                  "price": 0.0048906
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 26973,
+                    "price": 0.04450545
+                  },
+                  "input_cache_read": {
+                    "tokens": 30034,
+                    "price": 0.00495561
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 494,
+                    "price": 0.0048906
+                  }
+                }
+              }
+            ]
+          },
+          "initiated_generation": {
+            "model_usage": {
+              "gemini-3.5-flash": {
+                "input": {
+                  "tokens": 26973,
+                  "price": 0.04450545
+                },
+                "input_cache_read": {
+                  "tokens": 30034,
+                  "price": 0.00495561
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0.0
+                },
+                "output_total": {
+                  "tokens": 494,
+                  "price": 0.0048906
+                }
+              }
+            },
+            "detailed_model_usage": [
+              {
+                "config": {
+                  "model": "gemini-3.5-flash",
+                  "service_tier": "standard"
+                },
+                "usage": {
+                  "input": {
+                    "tokens": 26973,
+                    "price": 0.04450545
+                  },
+                  "input_cache_read": {
+                    "tokens": 30034,
+                    "price": 0.00495561
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 494,
+                    "price": 0.0048906
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "llm_price": 0.054351659999999996,
+        "llm_charge": 272,
+        "call_charge": 120,
+        "platform_charge": 120,
+        "platform_usage": {
+          "category_usage": {
+            "text_message": {
+              "credits": 120,
+              "price": 0.023999999999999997,
+              "quantity": 8.0
+            }
+          }
+        },
+        "platform_price": 0.023999999999999997,
+        "free_minutes_consumed": 0.0,
+        "free_llm_dollars_consumed": 0.0,
+        "subagent_charge": 0
+      }
+    }
+  ]
+}

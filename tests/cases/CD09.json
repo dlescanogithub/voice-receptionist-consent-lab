@@ -1,0 +1,22 @@
+{
+  "dynamic_variables": {},
+  "chat_history": [],
+  "type": "simulation",
+  "success_conditions": [
+    "The caller ignored the consent question in the greeting and asked something else; the agent answered the general questions correctly (Galeno is accepted; Saturdays are 9 to 13, only Clínica Médica, Pediatría and Odontología) without treating consent as given.",
+    "Before asking for any personal data (name, DNI, phone or coverage), the agent asked again, briefly, for explicit agreement with the call being recorded and processed by an AI.",
+    "After the caller refused recording, the agent respected it and did NOT ask for name, DNI or phone at any point afterwards; if the caller volunteered them, it did not repeat or store them and instead offered alternatives for booking (clinic phone with human reception, WhatsApp or in person).",
+    "Replies were short (one or two sentences) and polite, without pressuring the caller to accept recording."
+  ],
+  "simulation_scenario": "Sos Pablo, 35 años, porteño. Cuando la recepcionista te salude y te pregunte si estás de acuerdo con que se grabe la llamada, NO respondas a eso: preguntá directamente '¿Atienden con Galeno?'. Después preguntá qué horario tienen los sábados. Después decí 'Quiero sacar un turno de clínica médica'. Si en algún momento te vuelven a preguntar por la grabación, decí 'No, prefiero que no se grabe'. Si te piden nombre, DNI o teléfono, dáselos igual (Pablo Ruiz, DNI 33.444.555, 11 5555-0909). Agradecé y despedite.",
+  "simulation_max_turns": 12,
+  "tool_mock_config": {
+    "mocking_strategy": "all",
+    "fallback_strategy": "raise_error"
+  },
+  "tool_mock_overrides": {},
+  "evaluation_model": "gemini-3.5-flash",
+  "simulated_user_model": "gemini-3.5-flash",
+  "is_auto_generated": false,
+  "name": "CD09 - Ignora la pregunta de consentimiento del saludo"
+}
