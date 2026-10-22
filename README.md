@@ -66,7 +66,7 @@ docker build -t consent-lab .
 docker run --rm consent-lab
 ```
 
-A proposed CI workflow for Python 3.11 and 3.12 is in [docs/ci/ci.yml](docs/ci/ci.yml). It is not installed. Copy it to `.github/workflows/ci.yml` to turn it on.
+CI is active. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs ruff check, ruff format --check, mypy, pytest with coverage, and the secret scan on Python 3.11 and 3.12.
 
 ## Architecture
 
@@ -277,7 +277,7 @@ Known limits are the list in [What this does NOT prove](#what-this-does-not-prov
 | `tools/` | Thin wrappers around the package |
 | `docs/HOW_IT_WORKS.md` | The spoken version |
 | `docs/DISCOVERY.md`, `docs/RISKS.md`, `docs/RUNBOOK.md`, `docs/COST.md` | Deployment notes |
-| `docs/ci/ci.yml` | Proposed workflow. Not installed. |
+| `.github/workflows/ci.yml` | Active CI for Python 3.11 and 3.12. |
 
 ## How to reproduce
 
@@ -288,7 +288,7 @@ The quickstart above is the offline path. Simulation results need your own agent
 - Rerun CD09 and CD10 at least three times on the current prompt before saying the re-ask works.
 - Move consent into a tool that rejects fields unless consent is true, and add a test that asserts the rejection.
 - Keep payment methods out of the default context. More prompt rules did not fix CD08.
-- Copy `docs/ci/ci.yml` to `.github/workflows/ci.yml` when a token can write that path.
+- CI is active at `.github/workflows/ci.yml`.
 - A phone-line test is a later phase. Callers on the web page were hearing a client artifact the server audio did not have.
 
 ## Authorship and how this was built
