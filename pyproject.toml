@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-receptionist-consent-lab"
+version = "0.1.0"
+description = "Offline lab for a fictional clinic voice receptionist: consent-before-data prompt, acoustic checks, and a credit-gated probe."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Diego Lescano" }]
+dependencies = ["websockets==13.1"]
+
+[project.optional-dependencies]
+audio = [
+    "librosa==0.10.2.post1",
+    "numpy>=1.26",
+    "praat-parselmouth==0.4.7",
+]
+dev = [
+    "coverage==7.16.2",
+    "librosa==0.10.2.post1",
+    "mypy==2.4.0",
+    "numpy>=1.26",
+    "praat-parselmouth==0.4.7",
+    "pre-commit==4.7.0",
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+    "ruff==0.17.1",
+]
+
+[project.scripts]
+consent-lab = "consent_lab.cli:console_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+consent_lab = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --cov=consent_lab --cov-report=term-missing --cov-fail-under=85"
+
+[tool.coverage.run]
+source = ["consent_lab"]
+branch = false
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+fail_under = 85
+exclude_lines = ["if __name__ == .__main__.:"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["consent_lab"]
+mypy_path = "src"
+warn_unused_configs = true
+disallow_any_generics = true
+no_implicit_optional = true
+
+[[tool.mypy.overrides]]
+module = ["librosa", "librosa.*", "parselmouth", "websockets", "websockets.*"]
+ignore_missing_imports = true
