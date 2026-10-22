@@ -19,13 +19,13 @@ Use GitHub private vulnerability reporting (Security tab, Report a vulnerability
 - A real identity provider, an origin allowlist, or multi-tenant auth. The sanitized config records that platform authentication was off. A deployment would turn it on. This repo does not.
 - Recording consent for a real caller. The disclosure in the prompt is a script. It is not a legal opinion and it is not enforced by code.
 - Hosting, telephony, or a booking database.
-- The proposed workflow in `docs/ci/ci.yml` is not installed. It has to be copied to `.github/workflows/ci.yml` by someone whose token can write that path. Until then, GitHub Actions does not run it.
+- GitHub Actions runs `.github/workflows/ci.yml`. The workflow does not set `LIVE_ENABLED` and does not receive secrets.
 
 ## Secrets
 
 Configuration is environment variables only. The process does not read a `.env` file. `.env.example` has empty placeholders. Do not commit a key. Do not paste a key into the README, a test, or a log.
 
-CI, when the workflow is installed, does not set `LIVE_ENABLED`. Pytest does not open a socket. The default Docker command is `python -m consent_lab about`.
+CI does not set `LIVE_ENABLED`. Pytest does not open a socket. The default Docker command is `python -m consent_lab about`.
 
 ## Data
 

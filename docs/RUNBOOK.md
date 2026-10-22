@@ -64,6 +64,6 @@ Do not give them:
 - A `.env` file
 - A claim that the package tests prove the prompt
 
-## Proposed CI
+## CI
 
-`docs/ci/ci.yml` runs ruff, mypy, pytest with coverage, and the secret scan on Python 3.11 and 3.12. It is not installed. Copy it to `.github/workflows/ci.yml` with a token that can write that path. Until that copy exists, a green local pytest is the check you have.
+`.github/workflows/ci.yml` is active. It runs ruff check, ruff format --check, mypy, pytest with coverage, and the secret scan on Python 3.11 and 3.12. `docs/ci/ci.yml` points at that file.
