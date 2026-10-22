@@ -1,0 +1,28 @@
+# Hooks call the tools on PATH. `make setup` installs them into .venv.
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: python -m ruff check
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: ruff-format
+        name: ruff format
+        entry: python -m ruff format --check
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: mypy
+        name: mypy
+        entry: python -m mypy
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: secretscan
+        name: secret scan
+        entry: python -m consent_lab secretscan .
+        language: system
+        pass_filenames: false
+        always_run: true

@@ -1,0 +1,37 @@
+# Proposed GitHub Actions workflow.
+# This file is not active. Copy it to .github/workflows/ci.yml.
+# The token used for this change cannot write under .github/.
+
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: System library for WAV reads
+        run: sudo apt-get update && sudo apt-get install -y libsndfile1
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Lint
+        run: python -m ruff check . && python -m ruff format --check .
+      - name: Types
+        run: python -m mypy
+      - name: Tests
+        run: python -m pytest --cov=consent_lab --cov-report=term-missing --cov-fail-under=85
+      - name: Secret scan
+        run: python -m consent_lab secretscan .
