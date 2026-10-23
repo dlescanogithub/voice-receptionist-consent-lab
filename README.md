@@ -5,6 +5,7 @@
 - An English voice receptionist for a fictional clinic. The rule under test is consent to recording and to AI processing before any personal data, plus emergency routing, no diagnosis, and an honest human handoff. The 2026-10-21 simulation suites ran the Spanish wording of this design. The scores below are the scores of those runs.
 - The last full simulation suite (v17, 2026-10-21) passed 8 of 10. CD08 (English) still fails. The v18 re-ask for the case where the caller ignores the consent question is UNVERIFIED.
 - The Python package measures saved agent audio offline and can open a credit-gated WebSocket probe. Pytest does not call the probe. Start at [docs/HOW_IT_WORKS.md](docs/HOW_IT_WORKS.md).
+- **Demo video (English, offline):** [docs/demo/README.md](docs/demo/README.md) — [`voice_receptionist_consent_lab_demo_en.mp4`](docs/demo/voice_receptionist_consent_lab_demo_en.mp4)
 
 > **Honest limits.** The 8/10 figure is a SIMULATED suite: an LLM played the caller and an LLM graded the call, a few runs, one model. It is MEASURED as the score of those runs. It is not a listening panel and it does not transfer to another model. The consent gate is a prompt rule. On v17 it failed once. Package tests do not replay that call. They check the measurement code and the probe's refusal path.
 

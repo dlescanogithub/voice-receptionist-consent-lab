@@ -1,0 +1,30 @@
+consent $ python -m consent_lab about
+consent_lab 0.1.0
+live_enabled=false
+offline: python -m consent_lab measure
+live probe: off unless LIVE_ENABLED=1 (spends credits)
+consent $ clear
+[H[2J[3Jconsent $ python -m consent_lab about
+consent_lab 0.1.0
+live_enabled=false
+offline: python -m consent_lab measure
+live probe: off unless LIVE_ENABLED=1 (spends credits)
+consent $ clear
+[H[2J[3Jconsent $ python -m consent_lab measure --root evidence/ab | tee /tmp/consent_m.txt | tail -8
+V1       T3  F0  211.7 Hz  centroid  1806 Hz   5.28 s  Perfect, we have appointments with Dr. Ana Fictional on Frid
+V2       T1  F0  197.6 Hz  centroid  1734 Hz   5.42 s  Perfect, we have appointments with Dr. Ana Fictional on Frid
+V2       T2  F0  183.6 Hz  centroid  1783 Hz   5.68 s  Perfect, we have appointments with Dr. Ana Fictional on Frid
+V2       T3  F0  182.5 Hz  centroid  1745 Hz   5.59 s  Perfect, we have appointments with Dr. Ana Fictional on Frid
+V3       T1  F0  192.8 Hz  centroid  1684 Hz   4.23 s  Perfect, we have appointments with Dr. Ana Fictional on Frid
+V3       T2  F0  172.9 Hz  centroid  1820 Hz   5.22 s  Perfect, we have appointments with Dr. Ana Fictional on Frid
+V3       T3  F0  186.2 Hz  centroid  1923 Hz   5.74 s  Perfect, we have appointments with Dr. Ana Fictional on Frid
+wrote evidence/ab/measurements.csv (25 rows)
+consent $ clear
+[H[2J[3Jconsent $ python -m pytest -q --no-header 2>&1 | tail -6
+src/consent_lab/retry.py              34      0   100%
+src/consent_lab/secretscan.py         69      6    91%   61-62, 88-89, 98-99
+src/consent_lab/signed_url.py         68      0   100%
+----------------------------------------------------------------
+TOTAL                                774     20    97%
+Required test coverage of 85% reached. Total coverage: 97.42%
+consent $ 
