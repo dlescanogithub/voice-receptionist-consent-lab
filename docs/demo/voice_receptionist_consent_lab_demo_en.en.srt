@@ -1,0 +1,43 @@
+1
+00:00:00,920 --> 00:00:05,290
+A voice receptionist for Demo Palermo Clinic, a fictional clinic.
+
+2
+00:00:05,390 --> 00:00:13,780
+The rule under test is consent to recording and A-I before any personal data.
+This video is the offline package, not a live call.
+
+3
+00:00:14,990 --> 00:00:27,020
+consent_lab zero point one point zero. live_enabled false. The probe stays off
+unless LIVE_ENABLED equals one, and that spends credits.
+
+4
+00:00:28,290 --> 00:00:40,260
+Offline measure on twenty-five saved agent WAVs under evidence/ab. Pitch,
+centroid, duration, and a short transcript preview. Wrote measurements.csv.
+
+5
+00:00:41,470 --> 00:00:49,210
+Pytest: one hundred passed, ninety-seven point four two percent line coverage,
+floor eighty-five. MEASURED on this machine.
+
+6
+00:00:49,260 --> 00:00:56,460
+The eight of ten simulation figure in the README is a separate SIMULATED
+suite. Package tests do not replay those calls.
+
+7
+00:00:57,700 --> 00:01:05,150
+Use the prompt and the ten cases to build your own agent. Use this package to
+measure audio and to keep the probe off by default.
+
+8
+00:01:05,190 --> 00:01:13,300
+Not covered: a listening panel, transfer to another model, or a green CD08.
+v18 re-ask is UNVERIFIED.
+
+9
+00:01:13,350 --> 00:01:18,770
+Run python -m consent_lab measure. Lab path cost: zero.
+

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Add narrated English demo video (`voice_receptionist_consent_lab_demo_en.mp4`) with subtitles and evidence pack under `docs/demo/`.
 - English throughout. Prompts, the knowledge base, simulation cases, evidence transcripts, history, and the working log are English renderings. Acoustic numbers, simulation scores, credit counts, and the labels MEASURED, [EST], [SYN], SIMULATED, and UNVERIFIED are unchanged. The 2026-10-21 suites ran the Spanish wording; those scores were not recomputed.
 - Business value: a `## Business value` section in the README and `docs/BUSINESS_VALUE.md`. The buyer is the fictional Demo Palermo Clinic, not a client. The ROI sketch is the existing [EST] arithmetic in `docs/COST.md`. The default path is 0 USD.
 - Dependabot: `.github/dependabot.yml` opens weekly updates for pip and for GitHub Actions, both at `/`.
