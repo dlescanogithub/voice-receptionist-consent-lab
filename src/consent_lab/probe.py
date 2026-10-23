@@ -31,9 +31,9 @@ _LOGGER = logging.getLogger("consent_lab.probe")
 _SAMPLE_WIDTH = 2
 
 CALLER_SCRIPT: tuple[str, ...] = (
-    "Hola, quiero un turno con clínica médica",
-    "Sí",
-    "El viernes a la mañana",
+    "Hello, I would like a general-medicine appointment",
+    "Yes",
+    "Friday morning",
 )
 
 

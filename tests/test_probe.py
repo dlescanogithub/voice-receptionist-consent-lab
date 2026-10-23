@@ -104,9 +104,9 @@ def _audio(payload: bytes = b"\x01\x02" * 80) -> dict[str, object]:
 
 def test_caller_script_is_the_fixed_three_lines() -> None:
     assert CALLER_SCRIPT == (
-        "Hola, quiero un turno con clínica médica",
-        "Sí",
-        "El viernes a la mañana",
+        "Hello, I would like a general-medicine appointment",
+        "Yes",
+        "Friday morning",
     )
 
 
@@ -149,7 +149,7 @@ def test_apply_event_branches() -> None:
     assert state.first_audio == first
     assert (
         apply_event(
-            {"type": "agent_response", "agent_response_event": {"agent_response": "hola"}},
+            {"type": "agent_response", "agent_response_event": {"agent_response": "hello"}},
             cur,
             texts,
             state,
@@ -157,7 +157,7 @@ def test_apply_event_branches() -> None:
         )
         is None
     )
-    assert texts == ["hola"]
+    assert texts == ["hello"]
     assert apply_event({"type": "ignored"}, cur, texts, state, clock) is None
     with pytest.raises(ProbeError, match="ping"):
         apply_event({"type": "ping"}, cur, texts, state, clock)
@@ -198,10 +198,10 @@ def test_session_writes_wavs_and_meta_without_a_conversation_id(tmp_path: Path) 
             "conversation_initiation_metadata_event": {"agent_output_audio_format": "pcm_16000"},
         },
         _audio(),
-        {"type": "agent_response", "agent_response_event": {"agent_response": "uno"}},
+        {"type": "agent_response", "agent_response_event": {"agent_response": "one"}},
         None,
         _audio(b"\x03\x04" * 40),
-        {"type": "agent_response", "agent_response_event": {"agent_response": "dos"}},
+        {"type": "agent_response", "agent_response_event": {"agent_response": "two"}},
         {"type": "something-else"},
         None,
     ]
@@ -209,7 +209,7 @@ def test_session_writes_wavs_and_meta_without_a_conversation_id(tmp_path: Path) 
     clock = ManualClock()
     settings = _settings(ELEVENLABS_BRANCH_ID="branch-9")
     durs = asyncio.run(
-        run_session(socket, script=("sí",), out_dir=tmp_path, clock=clock, settings=settings)
+        run_session(socket, script=("yes",), out_dir=tmp_path, clock=clock, settings=settings)
     )
     assert len(durs) == 2
     sent = [item for item in socket.sent if isinstance(item, dict)]
@@ -217,11 +217,11 @@ def test_session_writes_wavs_and_meta_without_a_conversation_id(tmp_path: Path) 
     assert sent[0]["branch_id"] == "branch-9"
     assert {"type": "pong", "event_id": 3} in sent
     user_lines = [item["text"] for item in sent if item.get("type") == "user_message"]
-    assert user_lines == ["sí"]
+    assert user_lines == ["yes"]
     assert any(item.get("user_audio_chunk") for item in sent)
     meta = json.loads((tmp_path / "meta.json").read_text(encoding="utf-8"))
     assert set(meta) == {"fmt", "texts", "durs"}
-    assert meta["texts"] == ["uno", "dos"]
+    assert meta["texts"] == ["one", "two"]
     assert meta["fmt"] == "pcm_16000"
     with wave.open(str(tmp_path / "T1.wav")) as handle:
         assert handle.getnchannels() == 1
@@ -343,7 +343,7 @@ def test_run_probe_uses_opener_and_does_not_log_secrets(
             opener=opener,  # type: ignore[arg-type]
             connector=connector,
             clock=ManualClock(),
-            script=("hola",),
+            script=("hello",),
         )
     )
     assert len(durs) == 2

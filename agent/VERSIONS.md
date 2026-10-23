@@ -1,6 +1,6 @@
 # Versions
 
-Each file in `history/` is the state **before** the change named in its suffix. IDs, account data and the inline prompt text are stripped from the configs. The prompt for each version is the `.md` file next to it.
+Each file in `history/` is the state **before** the change named in its suffix. IDs, account data and the inline prompt text are stripped from the configs. The prompt for each version is the `.md` file next to it. Those files are the English text of the prompts. The 2026-10-21 suites ran the Spanish wording. The scores were not recomputed.
 
 | File prefix | Change that followed |
 |---|---|

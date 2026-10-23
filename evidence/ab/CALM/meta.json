@@ -2,9 +2,9 @@
   "conv": "<redacted-id>",
   "fmt": "pcm_16000",
   "texts": [
-    "Hola, habla Lucía de Clínica Demo Palermo. ¿En qué te puedo ayudar?",
-    "Te ayudo con eso. Antes te cuento que la llamada se graba y la procesa una IA para gestionar tu consulta. ¿Estás de acuerdo?",
-    "¡Bárbaro! Como esta es una demo, te aviso que podés usar datos inventados cuando te los pida. Contame, ¿qué consulta querías hacer hoy?"
+    "Hello, this is Lucia from Demo Palermo Clinic. How can I help you?",
+    "I can help with that. First, this call is recorded and an AI processes it to handle your request. Do you agree?",
+    "Great. Because this is a demo, you can use made-up details when I ask for them. Tell me, what did you want to ask about today?"
   ],
   "durs": [
     4.0,

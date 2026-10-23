@@ -60,6 +60,7 @@ def feats(
     rms = librosa.feature.rms(y=y2)[0]
     loud = 20 * np.log10(float(rms[rms > 1e-4].mean()) + 1e-9)
     mfcc = librosa.feature.mfcc(y=y2, sr=sr, n_mfcc=20)[1:].mean(axis=1)
+    # Accented vowels stay in the set so a syllable estimate still counts them.
     vowels = sum(char in "aeiouáéíóú" for char in (text or "").lower())
     harmonicity = sound.to_harmonicity()
     hnr = float(parselmouth.praat.call(harmonicity, "Get mean", 0, 0))

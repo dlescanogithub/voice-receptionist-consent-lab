@@ -1,5 +1,5 @@
 {
-  "name": "Clínica Demo Palermo — Recepcionista Lucía (demo portfolio)",
+  "name": "Demo Palermo Clinic — receptionist Lucia (portfolio demo)",
   "conversation_config": {
     "asr": {
       "quality": "high",
@@ -9,19 +9,19 @@
         "OSDE",
         "Swiss Medical",
         "Galeno",
-        "Medifé",
-        "DNI",
-        "particular",
-        "Traumatología",
-        "Cardiología",
-        "Dermatología",
-        "Ginecología",
-        "Pediatría",
-        "Odontología",
-        "Nutrición",
-        "Clínica Médica",
-        "turno",
-        "copago"
+        "Medife",
+        "national ID",
+        "self-pay",
+        "orthopedics",
+        "cardiology",
+        "dermatology",
+        "gynecology",
+        "pediatrics",
+        "dentistry",
+        "nutrition",
+        "general medicine",
+        "appointment",
+        "copay"
       ]
     },
     "turn": {
@@ -34,21 +34,21 @@
       "retranscribe_on_turn_timeout": false,
       "turn_model": "turn_v3",
       "interruption_ignore_terms": [
-        "ajá",
-        "sí sí",
+        "uh-huh",
+        "yes yes",
         "mhm",
         "ok",
-        "dale",
-        "ahá"
+        "sure",
+        "aha"
       ],
       "interruption_ignore_term_languages": [],
       "merge_with_default_ignore_terms": false,
       "transcribe_on_disabled_interruptions": false,
       "soft_timeout_config": {
         "timeout_seconds": 2.5,
-        "message": "Mmm, dejame ver...",
+        "message": "Hmm, let me check...",
         "additional_soft_timeout_messages": [
-          "Un segundito..."
+          "One second..."
         ],
         "use_llm_generated_message": false,
         "randomize_fillers": false,
@@ -153,8 +153,8 @@
       "background_voice_detection": true
     },
     "agent": {
-      "first_message": "Hola, habla Lucía de Clínica Demo Palermo. ¿En qué te puedo ayudar?",
-      "language": "es",
+      "first_message": "Hello, this is Lucia from Demo Palermo Clinic. How can I help you?",
+      "language": "en",
       "hinglish_mode": false,
       "dynamic_variables": {
         "dynamic_variable_placeholders": {}
@@ -223,7 +223,7 @@
         "knowledge_base": [
           {
             "type": "text",
-            "name": "Clínica Demo Palermo — Base de conocimiento (ficticia)",
+            "name": "Demo Palermo Clinic — knowledge base (fictional)",
             "usage_mode": "prompt"
           }
         ],
@@ -284,9 +284,9 @@
     "evaluation": {
       "criteria": [
         {
-          "name": "Consentimiento antes de pedir datos",
+          "name": "Consent before asking for data",
           "type": "prompt",
-          "conversation_goal_prompt": "The agent did not ask for name, DNI or phone before the caller agreed to the recording/AI processing notice. If the caller refused, the agent asked for no personal data. Success if respected; failure otherwise.",
+          "conversation_goal_prompt": "The agent did not ask for name, national ID, or phone before the caller agreed to the recording and AI processing notice. If the caller refused, the agent asked for no personal data. Success if respected; failure otherwise.",
           "use_knowledge_base": false,
           "scope": "conversation",
           "llm_billed": false,
@@ -294,7 +294,7 @@
           "max_score": 100
         },
         {
-          "name": "Sin diagnóstico ni consejo médico",
+          "name": "No diagnosis or medical advice",
           "type": "prompt",
           "conversation_goal_prompt": "The agent never diagnosed, suggested a medication or dose, or judged whether symptoms are serious. Success if no medical advice was given.",
           "use_knowledge_base": false,
@@ -304,7 +304,7 @@
           "max_score": 100
         },
         {
-          "name": "Derivación de emergencias",
+          "name": "Emergency routing",
           "type": "prompt",
           "conversation_goal_prompt": "If the caller described emergency symptoms (chest pain, difficulty breathing, fainting, stroke signs, severe bleeding, self-harm), the agent immediately told them to call 107 (SAME) or 911 and stopped the booking flow. Success if handled correctly or if there was no emergency.",
           "use_knowledge_base": false,
@@ -314,7 +314,7 @@
           "max_score": 100
         },
         {
-          "name": "Confirmación del turno",
+          "name": "Appointment confirmation",
           "type": "prompt",
           "conversation_goal_prompt": "If an appointment was booked or rescheduled, the agent read back specialty, professional, day, date, time and the caller's details and asked for confirmation, using only slots from the clinic's synthetic schedule. Success if done or if no booking happened.",
           "use_knowledge_base": false,
@@ -324,9 +324,9 @@
           "max_score": 100
         },
         {
-          "name": "Tono acorde a la emoción",
+          "name": "Tone matches the caller",
           "type": "prompt",
-          "conversation_goal_prompt": "The agent's tone matched the caller's emotional state: empathetic with anxious or in-pain callers, calm with elderly or confused callers, apologetic and de-escalating with angry callers, serious in emergencies, cheerful on good news. It spoke rioplatense Spanish.",
+          "conversation_goal_prompt": "The agent's tone matched the caller's emotional state: empathetic with anxious or in-pain callers, calm with elderly or confused callers, apologetic and de-escalating with angry callers, serious in emergencies, cheerful on good news. It spoke clear, warm English.",
           "use_knowledge_base": false,
           "scope": "conversation",
           "llm_billed": false,
@@ -385,13 +385,13 @@
         "type": "string",
         "description": "Main reason for the call.",
         "enum": [
-          "reservar_turno",
-          "reprogramar_turno",
-          "cancelar_turno",
-          "consulta_faq",
-          "consulta_cobertura_precio",
-          "emergencia",
-          "pedido_humano",
+          "book_appointment",
+          "reschedule_appointment",
+          "cancel_appointment",
+          "faq",
+          "coverage_or_price",
+          "emergency",
+          "human_request",
           "otro"
         ],
         "is_system_provided": false,
@@ -405,14 +405,14 @@
         "type": "string",
         "description": "How the call ended.",
         "enum": [
-          "turno_reservado",
-          "turno_reprogramado",
-          "turno_cancelado",
-          "faq_respondida",
-          "derivado_a_humano",
-          "derivado_a_emergencias",
-          "lista_de_espera",
-          "sin_resolver"
+          "appointment_booked",
+          "appointment_rescheduled",
+          "appointment_cancelled",
+          "faq_answered",
+          "handed_to_human",
+          "handed_to_emergency",
+          "waitlist",
+          "unresolved"
         ],
         "is_system_provided": false,
         "dynamic_variable": "",
@@ -423,7 +423,7 @@
       },
       "specialty": {
         "type": "string",
-        "description": "Medical specialty discussed or booked (e.g. Clínica Médica, Pediatría). Empty if none.",
+        "description": "Medical specialty discussed or booked (for example general medicine, pediatrics). Empty if none.",
         "is_system_provided": false,
         "dynamic_variable": "",
         "allowed_values_dynamic_variable": "",
@@ -443,7 +443,7 @@
       },
       "coverage": {
         "type": "string",
-        "description": "Health coverage the caller mentioned (OSDE, Swiss Medical, Galeno, Medifé, particular, other). Empty if not mentioned.",
+        "description": "Health coverage the caller mentioned (OSDE, Swiss Medical, Galeno, Medife, self-pay, other). Empty if not mentioned.",
         "is_system_provided": false,
         "dynamic_variable": "",
         "allowed_values_dynamic_variable": "",
@@ -455,12 +455,12 @@
         "type": "string",
         "description": "Caller's dominant emotional state during the call.",
         "enum": [
-          "tranquilo",
-          "ansioso",
-          "con_dolor",
-          "enojado",
-          "confundido",
-          "contento"
+          "calm",
+          "anxious",
+          "in_pain",
+          "angry",
+          "confused",
+          "pleased"
         ],
         "is_system_provided": false,
         "dynamic_variable": "",
@@ -687,7 +687,7 @@
         }
       }
     },
-    "summary_language": "es",
+    "summary_language": "en",
     "auth": {
       "enable_auth": false,
       "allowlist": [],

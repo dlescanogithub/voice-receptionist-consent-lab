@@ -13,7 +13,7 @@
         "type": "simulation",
         "success_conditions": [
           "After the caller spoke English, the agent switched to English and kept responding in English for the rest of the conversation.",
-          "The agent said private (particular) patients are accepted and that a Clínica Médica consultation costs 35,000 Argentine pesos, written in words or clearly stated, without inventing other prices.",
+          "The agent said private (self-pay) patients are accepted and that a general medicine consultation costs 35,000 Argentine pesos, written in words or clearly stated, without inventing other prices.",
           "When asked about the weather, the agent politely said it cannot help with that and redirected to what it can do, in one short reply.",
           "Replies were short (one or two sentences), asked at most one question each, and the goodbye did not wish the caller to 'get well' since no illness was mentioned."
         ],
@@ -34,7 +34,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Hola! Te comunicaste con Clínica Demo Palermo, soy Lucía, la asistente virtual. Antes de empezar, te aviso que esta llamada se graba y la procesa una inteligencia artificial solo para gestionar tu consulta, según la Ley veinticinco mil trescientos veintiséis de datos personales. ¿Estás de acuerdo para seguir?",
+          "message": "Hello! You have reached Demo Palermo Clinic, I am Lucia, the virtual assistant. Before we start, I'm letting you know that this call is recorded and processed by an artificial intelligence only to handle your inquiry, under the Personal Data Protection Act twenty-five thousand three hundred twenty-six. Do you agree to continue?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -621,7 +621,7 @@
           "triggered_guardrails": []
         }
       ],
-      "test_name": "CD08 - Paciente habla en inglés",
+      "test_name": "CD08 - Patient speaks English",
       "condition_result": {
         "result": "success",
         "rationale": {

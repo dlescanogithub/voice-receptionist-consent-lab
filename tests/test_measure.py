@@ -56,8 +56,8 @@ def test_display_path_hides_outside_absolute(tmp_path: Path) -> None:
 
 
 def test_format_line_matches_the_old_script() -> None:
-    row = TurnMeasurement("CALM", "T1", "Hola", 197.0, 1780, 3.86, -20.7, 0.34)
-    assert format_line(row) == "CALM     T1  F0  197.0 Hz  centroid  1780 Hz   3.86 s  Hola"
+    row = TurnMeasurement("CALM", "T1", "Hello", 197.0, 1780, 3.86, -20.7, 0.34)
+    assert format_line(row) == "CALM     T1  F0  197.0 Hz  centroid  1780 Hz   3.86 s  Hello"
 
 
 def test_measure_tree_with_fakes(tmp_path: Path) -> None:

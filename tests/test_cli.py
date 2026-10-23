@@ -81,7 +81,7 @@ def test_measure_cli_on_a_sine(tmp_path: Path) -> None:
 
     run = tmp_path / "TONE"
     run.mkdir()
-    (run / "meta.json").write_text('{"texts":["tono de prueba"]}', encoding="utf-8")
+    (run / "meta.json").write_text('{"texts":["test tone"]}', encoding="utf-8")
     sr = 16000
     samples = int(sr * 0.5)
     time = np.arange(samples) / sr

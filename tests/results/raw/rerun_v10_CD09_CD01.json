@@ -13,11 +13,11 @@
         "type": "simulation",
         "success_conditions": [
           "When the caller answered the consent question with another question, the agent answered briefly and asked for consent again instead of proceeding as if consent had been given.",
-          "After the caller refused recording, the agent respected it and did NOT ask for name, DNI or phone at any point afterwards; if the caller volunteered them, it did not repeat or store them and instead offered the WhatsApp or in-person alternative for booking.",
-          "The agent still answered the general questions correctly: Galeno is accepted, and Saturdays are 9 to 13 (only Clínica Médica, Pediatría and Odontología).",
+          "After the caller refused recording, the agent respected it and did NOT ask for name, national ID, or phone at any point afterwards; if the caller volunteered them, it did not repeat or store them and instead offered the WhatsApp or in-person alternative for booking.",
+          "The agent still answered the general questions correctly: Galeno is accepted, and Saturdays are 9 to 13 (only general medicine, pediatrics and dentistry).",
           "Replies were short (one or two sentences) and polite, without pressuring the caller to accept recording."
         ],
-        "simulation_scenario": "Sos Pablo, 35 años, porteño. Cuando te pregunten si te parece bien que se grabe la llamada, NO respondas a eso: decí solo '¿En qué me podés ayudar?'. Si te vuelven a preguntar por la grabación, decí 'No, prefiero que no se grabe'. Después preguntá si atienden con Galeno y qué horario tienen los sábados. Después decí 'Quiero sacar un turno de clínica médica'. Si te piden nombre, DNI o teléfono, dáselos igual (Pablo Ruiz, DNI 33.444.555, 11 5555-0909). Agradecé y despedite.",
+        "simulation_scenario": "You are Pablo, 35 years old, from Buenos Aires. When they ask if it is okay for the call to be recorded, do NOT answer that: say only 'How can you help me?'. If they ask about the recording again, say 'No, I prefer that it not be recorded'. Then ask whether they accept Galeno and what hours they have on Saturdays. Then say 'I want to book a general medicine appointment'. If they ask for your name, national ID, or phone, give them anyway (Pablo Ruiz, national ID 33.444.555, 11 5555-0909). Thank them and say goodbye.",
         "simulation_max_turns": 12,
         "tool_mock_config": {
           "mocking_strategy": "all",
@@ -34,7 +34,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Hola! Clínica Demo Palermo, habla Lucía, la asistente virtual. Te aviso que esta llamada se graba y la procesa una IA para gestionar tu consulta, ¿te parece bien?",
+          "message": "Hi! Demo Palermo Clinic, this is Lucia, the virtual assistant. I'm letting you know that this call is recorded and an AI processes it to handle your inquiry. Is that all right with you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -55,7 +55,7 @@
         },
         {
           "role": "user",
-          "message": "¿En qué me podés ayudar?",
+          "message": "How can you help me?",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 12,
@@ -70,7 +70,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Te puedo ayudar con turnos, horarios, precios y coberturas. Antes, ¿te parece bien que la llamada se graba?",
+          "message": "I can help you with appointments, hours, prices, and coverage plans. First, is it all right with you that the call is recorded?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -152,7 +152,7 @@
         },
         {
           "role": "user",
-          "message": "No, prefiero que no se grabe. ¿Atienden con Galeno y qué horario tienen los sábados?",
+          "message": "No, I prefer that it not be recorded. Do you accept Galeno, and what hours do you have on Saturdays?",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 12,
@@ -167,7 +167,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Respeto tu decisión, no te preocupes. Sí, atendemos con Galeno en los planes azul doscientos veinte, plata trescientos treinta y oro cuatrocientos cuarenta, y los sábados abrimos de nueve de la mañana a una de la tarde. ¿Te gustaría saber algo más sobre las especialidades de ese día?",
+          "message": "I respect your decision, don't worry. Yes, we accept Galeno for the Blue two hundred twenty, Silver three hundred thirty, and Gold four hundred forty plans, and on Saturdays we are open from 9 in the morning until 1 in the afternoon. Would you like to know more about the specialties available that day?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -249,7 +249,7 @@
         },
         {
           "role": "user",
-          "message": "Quiero sacar un turno de clínica médica.",
+          "message": "I want to book a general medicine appointment.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 12,
@@ -264,7 +264,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Como preferís que no se grabe la llamada, no te puedo tomar los datos para agendarte un turno por acá, pero podés sacarlo escribiendo a nuestro WhatsApp al once, cero cero cero cero, cero cero cero uno. Si querés, igual te puedo decir qué horarios tenemos disponibles para que ya los conozcas, ¿te sirve?",
+          "message": "Since you prefer that the call not be recorded, I cannot take your information to book an appointment for you here, but you can book it by writing to our WhatsApp at eleven, zero zero zero zero, zero zero zero one. If you want, I can still tell you what times we have available so you already know them. Does that work for you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -346,7 +346,7 @@
         },
         {
           "role": "user",
-          "message": "Uh, bueno, dale, decime qué horarios tienen disponibles para clínica médica.",
+          "message": "Uh, okay, sure, tell me what times are available for general medicine.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 12,
@@ -361,7 +361,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[warmly] Dale, te cuento. Para clínica médica con la doctora Ana Ficticia tenemos los lunes, miércoles y viernes a las nueve y veinte, diez y cuarenta y doce y veinte del mediodía. ¿Te sirve alguno de esos días y horarios?",
+          "message": "[warmly] Sure, let me tell you. For general medicine with Dr. Ana Fictional we have Mondays, Wednesdays, and Fridays at 9:20, 10:40, and 12:20 noon. Do any of those days and times work for you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -443,7 +443,7 @@
         },
         {
           "role": "user",
-          "message": "Me sirve el lunes a las diez y cuarenta. ¿Cómo hago para reservarlo por WhatsApp entonces?",
+          "message": "Monday at ten forty works for me. How do I reserve it through WhatsApp then?",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 12,
@@ -458,7 +458,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Para reservarlo, simplemente agendá nuestro WhatsApp al once, cero cero cero cero, cero cero cero uno y mandanos un mensaje diciendo que querés el turno del lunes a las diez y cuarenta de la mañana. ¿Hay algo más en lo que te pueda ayudar hoy?",
+          "message": "To book it, simply save our WhatsApp number, eleven, zero zero zero zero, zero zero zero one, and send us a message saying you want the Monday appointment at 10:40 in the morning. Is there anything else I can help you with today?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -540,7 +540,7 @@
         },
         {
           "role": "user",
-          "message": "No, eso sería todo. Muchas gracias por la información, chau.",
+          "message": "No, that would be all. Thank you very much for the information, bye.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 12,
@@ -555,7 +555,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡De nada! Que tengas un hermoso día. ¡Chau!",
+          "message": "You're welcome! Have a beautiful day. Bye!",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -707,10 +707,10 @@
         "result": "success",
         "rationale": {
           "messages": [
-            "Criterion 1 passed: El agente respondió brevemente a la pregunta del usuario sobre en qué podía ayudar y volvió a solicitar el consentimiento para grabar la llamada antes de continuar.",
-            "Criterion 2 passed: El agente respetó la negativa a grabar la llamada, no solicitó datos personales (nombre, DNI o teléfono) y ofreció la alternativa de reservar por WhatsApp.",
-            "Criterion 3 passed: El agente confirmó correctamente que atienden con Galeno y que el horario de los sábados es de 9 a 13 horas.",
-            "Criterion 4 passed: Las respuestas del agente fueron cortas, educadas y no presionó al usuario para que aceptara la grabación de la llamada.",
+            "Criterion 1 passed: The agent briefly answered the user's question about what it could help with and again requested consent to record the call before continuing.",
+            "Criterion 2 passed: The agent respected the refusal to record the call, did not request personal data (name, national ID, or phone), and offered the alternative of booking by WhatsApp.",
+            "Criterion 3 passed: The agent correctly confirmed that they accept Galeno and that Saturday hours are from 9 to 13 hours.",
+            "Criterion 4 passed: The agent's responses were short and polite, and the agent did not pressure the user to accept the recording of the call.",
             "The agent ended the conversation."
           ],
           "summary": "Evaluation succeeded"
@@ -845,11 +845,11 @@
         "type": "simulation",
         "success_conditions": [
           "The agent asked for consent and only requested personal data after the caller agreed.",
-          "The agent offered a Clínica Médica morning slot that exists in the synthetic schedule (Dra. Ana Ficticia at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Ejemplo) including weekday and date.",
-          "The agent collected name, DNI, phone and coverage and read them back with the appointment details asking for confirmation.",
-          "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used rioplatense voseo."
+          "The agent offered a general medicine morning slot that exists in the synthetic schedule (Dr. Ana Fictional at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Example) including weekday and date.",
+          "The agent collected name, national ID, phone and coverage and read them back with the appointment details asking for confirmation.",
+          "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used River Plate informal address."
         ],
-        "simulation_scenario": "Sos Marcela Gómez, 38 años, de Buenos Aires, hablás en español rioplatense. Cuando te pregunten si aceptás que la llamada se grabe, decí que sí. Querés un turno de Clínica Médica para un control general, preferís a la mañana. Aceptá uno de los horarios que te ofrezcan. Cuando te pidan datos dá: nombre Marcela Gómez, DNI 30.111.222 (inventado), teléfono 11 5555-0101, cobertura OSDE plan 310. Cuando te lean la confirmación decí que está todo bien, agradecé y despedite.",
+        "simulation_scenario": "You are Marcela Gomez, 38 years old, from Buenos Aires, you speak River Plate Spanish. When they ask if you accept that the call be recorded, say yes. You want a general medicine appointment for a general checkup, you prefer the morning. Accept one of the times they offer you. When they ask for information give: name Marcela Gomez, national ID 30.111.222 (made up), phone 11 5555-0101, coverage OSDE plan 310. When they read the confirmation say that everything is all right, thank them, and say goodbye.",
         "simulation_max_turns": 14,
         "tool_mock_config": {
           "mocking_strategy": "all",
@@ -866,7 +866,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Hola! Clínica Demo Palermo, habla Lucía, la asistente virtual. Te aviso que esta llamada se graba y la procesa una IA para gestionar tu consulta, ¿te parece bien?",
+          "message": "Hi! Demo Palermo Clinic, this is Lucia, the virtual assistant. I'm letting you know that this call is recorded and an AI processes it to handle your inquiry. Is that all right with you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -887,7 +887,7 @@
         },
         {
           "role": "user",
-          "message": "Hola Lucía. Sí, está bien, no hay problema con que se grabe.",
+          "message": "Hi Lucia. Yes, that's fine, there's no problem with it being recorded.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -902,7 +902,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Gracias; como es una demo, podés usar datos inventados. ¿En qué te puedo ayudar?",
+          "message": "Thank you; since this is a demo, you can use made-up information. How can I help you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -984,7 +984,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, mirá, quería sacar un turno para Clínica Médica, para hacerme un control general. Preferiría que sea a la mañana.",
+          "message": "Hello, look, I wanted to book an appointment for general medicine, to get a general checkup. I would prefer it to be in the morning.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -999,7 +999,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[warmly] Dale, perfecto. Para Clínica Médica a la mañana te puedo ofrecer con la doctora Ana Ficticia el lunes veintiséis de octubre a las nueve y veinte o a las diez y cuarenta de la mañana. ¿Te sirve alguno de esos horarios?",
+          "message": "[warmly] Sure, perfect. For general medicine in the morning I can offer you Dr. Ana Fictional on Monday, October 26 at 9:20 or at 10:40 in the morning. Does either of those times work for you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1081,7 +1081,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, sí, me sirve el de las nueve y veinte de la mañana, por favor.",
+          "message": "Hi, yes, the nine twenty in the morning one works for me, please.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1096,7 +1096,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Bárbaro! Para agendar el turno, ¿me podrías decir tu nombre y apellido, por favor?",
+          "message": "Great! To schedule the appointment, could you tell me your first and last name, please?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1178,7 +1178,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, mi nombre es Marcela Gómez.",
+          "message": "Yes, my name is Marcela Gomez.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1193,7 +1193,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Buenísimo, Marcela. ¿Me dirías tu número de documento, por favor?",
+          "message": "Great, Marcela. Would you tell me your ID number, please?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1275,7 +1275,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, mi DNI es 30.111.222.",
+          "message": "Yes, my national ID is 30.111.222.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1290,7 +1290,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¿El documento es tres cero, uno uno uno, dos dos dos?",
+          "message": "Is the ID three zero, one one one, two two two?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1372,7 +1372,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, exacto, ese mismo.",
+          "message": "Yes, exactly, that one.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1387,7 +1387,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Perfecto. ¿Me pasás un número de teléfono de contacto, por favor?",
+          "message": "Perfect. Can you give me a contact phone number, please?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1469,7 +1469,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, tomá nota, es 11 5555-0101.",
+          "message": "Yes, write this down, it's 11 5555-0101.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1484,7 +1484,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¿El teléfono es once, cinco cinco cinco cinco, cero uno cero uno?",
+          "message": "Is the phone number eleven, five five five five, zero one zero one?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1566,7 +1566,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, es ese mismo.",
+          "message": "Yes, that's the one.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1581,7 +1581,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Excelente. Y por último, ¿te atendés con alguna cobertura médica o de forma particular?",
+          "message": "Excellent. And lastly, are you seen with any health coverage or as self-pay?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1663,7 +1663,7 @@
         },
         {
           "role": "user",
-          "message": "Me atiendo con OSDE, tengo el plan 310.",
+          "message": "I get my care through OSDE, I have plan 310.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1678,7 +1678,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[warmly] Genial, Marcela. Te resumo los datos del turno: es para Clínica Médica con la doctora Ana Ficticia, el lunes veintiséis de octubre a las nueve y veinte de la mañana. Tus datos son Marcela Gómez, documento tres cero, uno uno uno, dos dos dos, teléfono once, cinco cinco cinco cinco, cero uno cero uno, y tu cobertura es OSDE plan trescientos diez, sin copago. ¿Está todo bien?",
+          "message": "[warmly] Great, Marcela. Here is a summary of the appointment details: it is for general medicine with Dr. Ana Fictional, on Monday, October 26 at 9:20 in the morning. Your information is Marcela Gomez, ID three zero, one one one, two two two, phone eleven, five five five five, zero one zero one, and your coverage is OSDE plan three hundred ten, with no copay. Is everything all right?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1760,7 +1760,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, está todo perfecto, es correcto. Muchas gracias por la atención.",
+          "message": "Yes, everything is perfect, it's correct. Thank you very much for your assistance.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1775,7 +1775,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[happy] ¡Listo, ya te quedó agendado el turno! Recordá llegar diez minutos antes con tu documento y credencial, y si necesitás cancelar, por favor avisanos con veinticuatro horas de anticipación. ¿Te puedo ayudar con algo más?",
+          "message": "[happy] All set, your appointment is booked! Remember to arrive ten minutes early with your ID and card, and if you need to cancel, please let us know 24 hours in advance. Can I help you with anything else?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1857,7 +1857,7 @@
         },
         {
           "role": "user",
-          "message": "No, nada más, eso sería todo. Muchísimas gracias por la ayuda, que tengas un lindo día. Chau chau.",
+          "message": "No, nothing else, that would be all. Thank you very much for the help, have a nice day. Bye bye.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 20,
@@ -1872,7 +1872,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Muchísimas gracias a vos, Marcela! Que tengas un hermoso día, ¡chau chau!",
+          "message": "Thank you so much, Marcela! Have a beautiful day, bye bye!",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1905,7 +1905,7 @@
               "type": "system",
               "request_id": "end_call_053055c55611439f8c321eeebf24f4eb",
               "tool_name": "end_call",
-              "params_as_json": "{\"system__message_to_speak\": \"\\u00a1Much\\u00edsimas gracias a vos, Marcela! Que tengas un hermoso d\\u00eda, \\u00a1chau chau!\", \"reason\": \"The user confirmed that they do not need any further assistance and said goodbye, so the conversation is successfully completed.\"}",
+              "params_as_json": "{\"system__message_to_speak\": \"Thank you so much, Marcela! Have a wonderful day, bye bye!\", \"reason\": \"The user confirmed that they do not need any further assistance and said goodbye, so the conversation is successfully completed.\"}",
               "tool_has_been_called": true
             }
           ],
@@ -2010,15 +2010,15 @@
           "triggered_guardrails": []
         }
       ],
-      "test_name": "CD01 - Reserva normal (Clínica Médica, OSDE)",
+      "test_name": "CD01 - Standard booking (general medicine, OSDE)",
       "condition_result": {
         "result": "success",
         "rationale": {
           "messages": [
-            "Criterion 1 passed: El agente solicitó el consentimiento para grabar la llamada al inicio y solo pidió datos personales después de que el usuario aceptó.",
-            "Criterion 2 passed: El agente ofreció turnos por la mañana con la Dra. Ana Ficticia para el lunes 26 de octubre a las 9:20 y 10:40, especificando el día de la semana y la fecha.",
-            "Criterion 3 passed: El agente recopiló el nombre, DNI, teléfono y cobertura, y luego los leyó junto con los detalles del turno para confirmar con el usuario.",
-            "Criterion 4 passed: El agente mencionó llegar 10 minutos antes, la política de cancelación de 24 horas y utilizó voseo rioplatense (\"podés\", \"Recordá\", \"necesitás\").",
+            "Criterion 1 passed: The agent requested consent to record the call at the start and only asked for personal data after the user accepted.",
+            "Criterion 2 passed: The agent offered morning appointments with Dr. Ana Fictional for Monday, October 26 at 9:20 and 10:40, specifying the day of the week and the date.",
+            "Criterion 3 passed: The agent collected the name, national ID, phone number, and coverage, and then read them along with the appointment details to confirm with the user.",
+            "Criterion 4 passed: The agent mentioned arriving 10 minutes early, the 24-hour cancellation policy, and used River Plate informal address (\"you can\", \"Remember\", \"you need\").",
             "The agent ended the conversation."
           ],
           "summary": "Evaluation succeeded"

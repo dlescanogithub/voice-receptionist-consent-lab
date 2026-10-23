@@ -2,13 +2,13 @@
 
 **TL;DR**
 
-- A Spanish (Rioplatense) voice receptionist for a fictional clinic. The rule under test is consent to recording and to AI processing before any personal data, plus emergency routing, no diagnosis, and an honest human handoff.
+- An English voice receptionist for a fictional clinic. The rule under test is consent to recording and to AI processing before any personal data, plus emergency routing, no diagnosis, and an honest human handoff. The 2026-10-21 simulation suites ran the Spanish wording of this design. The scores below are the scores of those runs.
 - The last full simulation suite (v17, 2026-10-21) passed 8 of 10. CD08 (English) still fails. The v18 re-ask for the case where the caller ignores the consent question is UNVERIFIED.
 - The Python package measures saved agent audio offline and can open a credit-gated WebSocket probe. Pytest does not call the probe. Start at [docs/HOW_IT_WORKS.md](docs/HOW_IT_WORKS.md).
 
 > **Honest limits.** The 8/10 figure is a SIMULATED suite: an LLM played the caller and an LLM graded the call, a few runs, one model. It is MEASURED as the score of those runs. It is not a listening panel and it does not transfer to another model. The consent gate is a prompt rule. On v17 it failed once. Package tests do not replay that call. They check the measurement code and the probe's refusal path.
 
-The clinic (Clínica Demo Palermo), its doctors, address, phone numbers, prices, and patients are [SYN]. Every test caller uses invented data. The repo has no agent id, no branch id, no dashboard link, and no API key. Nothing here comes from an employer or a client.
+The clinic (Demo Palermo Clinic), its doctors, address, phone numbers, prices, and patients are [SYN]. Every test caller uses invented data. The repo has no agent id, no branch id, no dashboard link, and no API key. Nothing here comes from an employer or a client.
 
 ## Problem and what it does
 
@@ -24,7 +24,7 @@ The agent speaks the notice in the first message, with interruptions off for tha
 | No diagnosis | No condition, medication, dose, or "this is serious". It offers a specialty. | same |
 | Emergencies | Chest pain, trouble breathing, and the other listed signs go to 107 or 911. Self-harm risk also mentions 135. No data. | same |
 | Human handoff | Says nobody is available live, then a callback (name and phone) only with consent. | same |
-| Languages | Spanish with voseo by default. Switches to English under the same rules. The two-sentence cap in English is not met. | same |
+| Languages | Clear, short English in this tree. The two-sentence cap is in the prompt and is not met (CD08). The 2026-10-21 suites ran in Spanish, with a switch to English under the same rules. | same |
 | Post-call | Five evaluation criteria and nine data fields, including `consent_given`. The field is a label after the call. It does not block a question. | `agent/agent_config.sanitized.json` |
 
 Voice stack in the sanitized config: TTS `eleven_v4_turbo`, expressive mode, stock library voice, stability 0.5, speed 1.0, similarity 0.8. Turn-taking is `turn_v3`. The knowledge base is passed in prompt mode, without retrieval, to keep latency down.
@@ -66,7 +66,7 @@ docker build -t consent-lab .
 docker run --rm consent-lab
 ```
 
-CI is active. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs ruff check, ruff format --check, mypy, pytest with coverage, and the secret scan on Python 3.11 and 3.12.
+CI is active. Package 0.1.0 is the released version. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs ruff check, ruff format --check, mypy, pytest with coverage, and the secret scan on Python 3.11 and 3.12. Dependabot opens weekly updates for pip and for GitHub Actions (`.github/dependabot.yml`).
 
 ## Architecture
 
@@ -101,7 +101,7 @@ The consent gate in that diagram is a prompt rule, not a function in `src/consen
 
 ### Simulation suites
 
-Logged on 2026-10-21. SIMULATED caller and grader. The pass/fail marks are MEASURED scores of those runs. Detail is in [tests/RESULTS.md](tests/RESULTS.md). The original working log, in Spanish, is [tests/results/LOG_es.md](tests/results/LOG_es.md).
+Logged on 2026-10-21. SIMULATED caller and grader. The pass/fail marks are MEASURED scores of those runs. Detail is in [tests/RESULTS.md](tests/RESULTS.md). The working log is [tests/results/LOG.md](tests/results/LOG.md), an English rendering of the 2026-10-21 notes. The runs themselves were in Spanish.
 
 | Test | What it checks | Latest logged result |
 | --- | --- | --- |
@@ -133,6 +133,12 @@ The national id was once read as millions. The cause was a platform text-normali
 
 A unit test recomputes the CALM rows from the committed WAV files and compares them to the CSV. That checks this package against the lab record. It does not re-hear the call.
 
+## Business value
+
+Demo Palermo Clinic is a fictional outpatient clinic, not a buyer this repo has served. The value story is consent compliance risk (no personal data before an explicit yes) and receptionist time on hours, prices, coverage, and bookings. The only money arithmetic in the repo is **[EST]**, in [docs/COST.md](docs/COST.md): platform cost USD 192 a month for an 800-call slice; conservative benefit USD 120 (ROI −37.5%); higher containment and a higher loaded minute, benefit USD 720 (ROI 275%). The sign flips. This repo did not measure containment or a wage. The measured cost of the default path is 0 USD.
+
+Full note: [docs/BUSINESS_VALUE.md](docs/BUSINESS_VALUE.md). Credit counts, which are not converted to currency here, are [docs/COST.md](docs/COST.md).
+
 ## Use cases, governance and business strategy
 
 ### Client-style use cases
@@ -141,7 +147,7 @@ The rows are patterns. The clinic is [SYN]. This is not a client engagement.
 
 | Use case | Status | Problem | Who approves | Gated effects | How this repo handles it |
 | --- | --- | --- | --- | --- | --- |
-| Outpatient reception, Clínica Demo Palermo [SYN] | Implemented as a prompt and a sanitized config. Not a booking system. | The caller must hear that the call is recorded and processed by AI before a name, a national id, or a phone number, and can refuse and still get hours and prices. | A clinic owner would approve the disclosure and the field list. Nobody in this repo is that owner. | Asking for those four fields. The "booking" is a sentence. | First message, prompt rules, post-call `consent_given`. Python does not enforce it. |
+| Outpatient reception, Demo Palermo Clinic [SYN] | Implemented as a prompt and a sanitized config. Not a booking system. | The caller must hear that the call is recorded and processed by AI before a name, a national id, or a phone number, and can refuse and still get hours and prices. | A clinic owner would approve the disclosure and the field list. Nobody in this repo is that owner. | Asking for those four fields. The "booking" is a sentence. | First message, prompt rules, post-call `consent_given`. Python does not enforce it. |
 | Dental visit reminder, outbound [SYN] | Design only | Remind someone of a visit without stating a diagnosis or a dose. | A dentist would approve the template and the list. | Placing a call. | Not built. No dialer. The "no diagnosis" rule is the pattern to copy. |
 | Imaging-center prep FAQ [SYN] | Design only | Answer preparation steps from a fixed sheet, and stop when the question is clinical. | The center would approve the sheet. | Read-only answers. | Not built. The synthetic knowledge base is the stand-in. |
 
@@ -187,7 +193,7 @@ Not covered: a real login, a retention schedule, a deletion workflow, a human qu
 
 **Problem.** A front desk spends time on hours, prices, coverage, and bookings, and loses trust if the line records people who have not agreed, or if it gives clinical advice. The narrow question is whether a voice agent can take the routine slice without taking data before a yes.
 
-**ROI [EST].** Two scenarios, same call volume, in [docs/COST.md](docs/COST.md). They are not a forecast.
+**ROI [EST].** Two scenarios, same call volume, in [docs/COST.md](docs/COST.md) and [docs/BUSINESS_VALUE.md](docs/BUSINESS_VALUE.md). They are not a forecast.
 
 - Conservative: benefit USD 120 a month, platform cost USD 192, ROI **−37.5%**.
 - Higher containment and a higher loaded minute: benefit USD 720, same USD 192 cost, ROI **275%**.
@@ -254,6 +260,7 @@ Who owns what, if this ever left the lab: the clinic owns the disclosure, the fi
 - It does not prove the behavior on another model, another temperature, or a larger sample. The suites are a few SIMULATED runs.
 - It does not prove that package coverage is coverage of the agent. Pytest never calls the model. The 97.42% figure in the metrics table is the Python package only.
 - It does not prove the [EST] ROI. Both signs are possible under the stated assumptions.
+- It does not prove the English wording of the prompts. The 2026-10-21 scores come from the Spanish wording. This tree is the English text of that design. The scores were not recomputed.
 
 ## Security and known limits
 
@@ -276,6 +283,7 @@ Known limits are the list in [What this does NOT prove](#what-this-does-not-prov
 | `samples/` | Stock-voice clips used to choose a voice |
 | `tools/` | Thin wrappers around the package |
 | `docs/HOW_IT_WORKS.md` | The spoken version |
+| `docs/BUSINESS_VALUE.md` | Fictional buyer, value levers, KPIs, and the [EST] ROI sketch |
 | `docs/DISCOVERY.md`, `docs/RISKS.md`, `docs/RUNBOOK.md`, `docs/COST.md` | Deployment notes |
 | `.github/workflows/ci.yml` | Active CI for Python 3.11 and 3.12. |
 
@@ -288,7 +296,7 @@ The quickstart above is the offline path. Simulation results need your own agent
 - Rerun CD09 and CD10 at least three times on the current prompt before saying the re-ask works.
 - Move consent into a tool that rejects fields unless consent is true, and add a test that asserts the rejection.
 - Keep payment methods out of the default context. More prompt rules did not fix CD08.
-- CI is active at `.github/workflows/ci.yml`.
+- CI is active at `.github/workflows/ci.yml`. Package 0.1.0 is the released version.
 - A phone-line test is a later phase. Callers on the web page were hearing a client artifact the server audio did not have.
 
 ## Authorship and how this was built
