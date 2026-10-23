@@ -3,12 +3,12 @@
   "chat_history": [],
   "type": "simulation",
   "success_conditions": [
-    "Every time the agent repeated the DNI it was read digit by digit with exactly the digits 2 7 4 0 8 9 1 5 in that order (e.g. 'dos siete, cinco cinco cinco, seis cero seis'), with no digit added, missing or changed, and without grouping them into large numbers like 'cuatrocientos ocho'.",
-    "Every time the agent repeated the phone it contained exactly 11 5555-0606 ('once' followed by 'cinco cinco cinco cinco, cero seis cero seis' digit by digit) with no errors.",
-    "The agent wrote all numbers as words (no numeric digits in its replies), said times naturally (e.g. 'nueve y media') and mentioned the Swiss Medical SMG20 copay of 'tres mil quinientos pesos'.",
-    "Because the caller mentioned no pain or illness (routine check-up), the agent did NOT say 'que te mejores' or similar in the goodbye, and it never used the same audio tag in two consecutive replies."
+    "Every time the agent repeated the national ID it was read digit by digit with exactly the digits 2 7 4 0 8 9 1 5 in that order (for example 'two seven, five five five, six zero six'), with no digit added, missing or changed, and without grouping them into large numbers like 'four hundred eight'.",
+    "Every time the agent repeated the phone it contained exactly 11 5555-0606 ('eleven' followed by 'five five five five, zero six zero six' digit by digit) with no errors.",
+    "The agent wrote all numbers as words (no numeric digits in its replies), said times naturally (for example 'nine thirty') and mentioned the Swiss Medical SMG20 copay of 'three thousand five hundred pesos'.",
+    "Because the caller mentioned no pain or illness (routine check-up), the agent did NOT say 'I hope you feel better' or similar in the goodbye, and it never used the same audio tag in two consecutive replies."
   ],
-  "simulation_scenario": "Sos Federico Lamas, 45 años, porteño. Aceptá la grabación. Querés turno de Cardiología para un chequeo de rutina antes de empezar el gimnasio (no tenés síntomas). Aceptá el primer horario que te ofrezcan. Dá tus datos inventados exactamente así: DNI 27.555.606, teléfono 11 5555-0606, cobertura Swiss Medical plan SMG20. Escuchá con atención cuando te los repitan: si algún dígito está mal, corregílo. Si todo está bien, confirmá, agradecé y despedite.",
+  "simulation_scenario": "You are Federico Lamas, 45, from Buenos Aires. Accept the recording. You want a cardiology appointment for a routine check before you start the gym (you have no symptoms). Accept the first time they offer. Give your invented details exactly like this: national ID 27.555.606, phone 11 5555-0606, coverage Swiss Medical plan SMG20. Listen carefully when they repeat them: if any digit is wrong, correct it. If everything is right, confirm, thank them, and say goodbye.",
   "simulation_max_turns": 16,
   "tool_mock_config": {
     "mocking_strategy": "all",
@@ -18,5 +18,5 @@
   "evaluation_model": "gemini-3.5-flash",
   "simulated_user_model": "gemini-3.5-flash",
   "is_auto_generated": false,
-  "name": "CD06 - Precisión al releer DNI y teléfono"
+  "name": "CD06 - Accuracy when reading back national ID and phone"
 }

@@ -5,7 +5,7 @@ Start here, not with a model name. The ten questions below are the Deployment St
 | # | Question | Why it matters | What this lab assumed |
 | --- | --- | --- | --- |
 | 1 | How many calls a week, and what share is hours, price, coverage, or booking rather than a clinical question? | Containment and the [EST] ROI both depend on this share. | Not collected. The [EST] model uses 2,000 calls a month and a 40% slice. |
-| 2 | Which language and which variety? | A two-sentence cap in English failed (CD08, MEASURED). Voseo versus usted is a prompt rule that failed once (CD05 on v15) and then passed. | Spanish, Rioplatense, with an English path. [SYN] clinic in Buenos Aires. |
+| 2 | Which language and which variety? | A two-sentence cap failed on the English path (CD08, MEASURED). Formal versus informal address is a prompt rule that failed once (CD05 on v15) and then passed. | Clear English in this tree. The 2026-10-21 suites ran in Spanish. [SYN] clinic in Buenos Aires. |
 | 3 | Is the call recorded today, and what does the current notice say? | The disclosure has to match the real practice. A prompt that says "we record" while the line does not, or the reverse, is a different problem. | The story says the call is recorded and an AI processes it. [SYN] |
 | 4 | What counts as a yes? Is silence a yes? Is "I want an appointment" a yes? | CD09 exists because the second one was treated as a yes once. | Only an explicit yes. Silence and a change of subject are not a yes. |
 | 5 | Where would a booking be written, and who owns that system? | This lab writes nothing. A retry cannot double-book because there is no book. | No system of record. Design only. |

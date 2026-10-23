@@ -55,7 +55,7 @@ Give the next person:
 - `agent/history/` and `agent/VERSIONS.md`
 - `tests/cases/` and `tests/RESULTS.md`
 - `evidence/ab/measurements.csv` and `docs/HOW_IT_WORKS.md`
-- This runbook, `docs/RISKS.md`, and `docs/COST.md`
+- This runbook, `docs/RISKS.md`, `docs/COST.md`, and `docs/BUSINESS_VALUE.md`
 - The note that CD08 still fails and that the v18 consent re-ask is UNVERIFIED
 
 Do not give them:

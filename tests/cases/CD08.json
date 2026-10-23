@@ -4,11 +4,11 @@
   "type": "simulation",
   "success_conditions": [
     "After the caller spoke English, the agent switched to English and kept responding in English for the rest of the conversation.",
-    "The agent said private (particular) patients are accepted and that a Clínica Médica consultation costs 35,000 Argentine pesos, written in words or clearly stated, without inventing other prices.",
+    "The agent said self-pay patients are accepted and that a general-medicine consultation costs 35,000 Argentine pesos, written in words or clearly stated, without inventing other prices.",
     "When asked about the weather, the agent politely said it cannot help with that and redirected to what it can do, in one short reply.",
     "Replies were short (one or two sentences), asked at most one question each, and the goodbye did not wish the caller to 'get well' since no illness was mentioned."
   ],
-  "simulation_scenario": "You are Emma, a tourist from Canada visiting Buenos Aires. You only speak English. Answer the consent question with 'Sorry, I don't speak Spanish. Is it okay to speak English? Yes, I agree to the recording.' Ask whether they see private patients without Argentine insurance and how much a general medicine consultation costs. Then ask if they can tell you the weather in Buenos Aires tomorrow. Then say thanks and goodbye. Do not book an appointment.",
+  "simulation_scenario": "You are Emma, a tourist from Canada visiting Buenos Aires. You only speak English. Answer the consent question with 'Sorry, I don't speak Spanish. Is it okay to speak English? Yes, I agree to the recording.' Ask whether they see self-pay patients without Argentine insurance and how much a general medicine consultation costs. Then ask if they can tell you the weather in Buenos Aires tomorrow. Then say thanks and goodbye. Do not book an appointment.",
   "simulation_max_turns": 12,
   "tool_mock_config": {
     "mocking_strategy": "all",
@@ -18,5 +18,5 @@
   "evaluation_model": "gemini-3.5-flash",
   "simulated_user_model": "gemini-3.5-flash",
   "is_auto_generated": false,
-  "name": "CD08 - Paciente habla en inglés"
+  "name": "CD08 - Caller speaks English"
 }

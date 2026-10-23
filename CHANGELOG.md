@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- English throughout. Prompts, the knowledge base, simulation cases, evidence transcripts, history, and the working log are English renderings. Acoustic numbers, simulation scores, credit counts, and the labels MEASURED, [EST], [SYN], SIMULATED, and UNVERIFIED are unchanged. The 2026-10-21 suites ran the Spanish wording; those scores were not recomputed.
+- Business value: a `## Business value` section in the README and `docs/BUSINESS_VALUE.md`. The buyer is the fictional Demo Palermo Clinic, not a client. The ROI sketch is the existing [EST] arithmetic in `docs/COST.md`. The default path is 0 USD.
+- Dependabot: `.github/dependabot.yml` opens weekly updates for pip and for GitHub Actions, both at `/`.
+- Profile status: CI is active and package 0.1.0 is the released version. The README states both. No "CI pending" line was in the tree.
 - CI is active. `.github/workflows/ci.yml` runs on Python 3.11 and 3.12: ruff check, ruff format --check, mypy, pytest with coverage (fail under 85%), and `python -m consent_lab secretscan`. It uses `actions/checkout@v7` and `actions/setup-python@v7`. `docs/ci/ci.yml` points at that workflow.
 
 ## 0.1.0 - 2026-10-22

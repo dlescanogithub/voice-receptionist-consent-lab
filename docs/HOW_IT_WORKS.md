@@ -43,7 +43,7 @@ The published rows (for example V0 T1 at 211.4 Hz and centroid 1957 Hz) are the 
 2. Request a signed WebSocket URL. The key is a header. The URL is not logged. Transient HTTP 429 and 5xx, and transport errors, retry with jitter, at most `CONSENT_LAB_MAX_ATTEMPTS` (default 3, hard ceiling 5). A 401 does not retry.
 3. Connect, with the same bound. Send a silent audio chunk on a timer, because the server ignores a text turn unless audio is also streaming. That detail is from the 2026 runs.
 4. Save each agent turn as `T1.wav`, `T2.wav`, … and write `meta.json` with the audio format, the agent texts, and the durations. No conversation id.
-5. The caller lines are fixed: a request for a clinic appointment, then "Sí", then a Friday morning. The point is to put the same sentence at different positions, which is what `SWAP` did.
+5. The caller lines are fixed: a request for a general-medicine appointment, then "Yes", then "Friday morning". The point is to put the same sentence at different positions, which is what `SWAP` did.
 
 A failure after the first audio byte does not start a second conversation. Retrying a half-finished call would spend the credits twice and would not be the same sample.
 

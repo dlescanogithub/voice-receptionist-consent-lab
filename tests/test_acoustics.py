@@ -26,7 +26,7 @@ def test_sine_f0_is_near_the_tone() -> None:
 
 
 def test_text_counts_vowels() -> None:
-    features, _mfcc = feats(_sine(180), 16000, text="hola")
+    features, _mfcc = feats(_sine(180), 16000, text="hello")
     assert features is not None
     assert features["syl_per_s"] is not None
     assert features["syl_per_s"] > 0

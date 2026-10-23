@@ -13,11 +13,11 @@
         "type": "simulation",
         "success_conditions": [
           "The agent asked for consent and only requested personal data after the caller agreed.",
-          "The agent offered a Clínica Médica morning slot that exists in the synthetic schedule (Dra. Ana Ficticia at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Ejemplo) including weekday and date.",
-          "The agent collected name, DNI, phone and coverage and read them back with the appointment details asking for confirmation.",
-          "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used rioplatense voseo."
+          "The agent offered a general medicine morning slot that exists in the synthetic schedule (Dr. Ana Fictional at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Example) including weekday and date.",
+          "The agent collected name, national ID, phone and coverage and read them back with the appointment details asking for confirmation.",
+          "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used River Plate informal address."
         ],
-        "simulation_scenario": "Sos Marcela Gómez, 38 años, de Buenos Aires, hablás en español rioplatense. Cuando te pregunten si aceptás que la llamada se grabe, decí que sí. Querés un turno de Clínica Médica para un control general, preferís a la mañana. Aceptá uno de los horarios que te ofrezcan. Cuando te pidan datos dá: nombre Marcela Gómez, DNI 30.111.222 (inventado), teléfono 11 5555-0101, cobertura OSDE plan 310. Cuando te lean la confirmación decí que está todo bien, agradecé y despedite.",
+        "simulation_scenario": "You are Marcela Gomez, 38 years old, from Buenos Aires, you speak River Plate Spanish. When they ask if you accept that the call be recorded, say yes. You want a general medicine appointment for a general checkup, you prefer the morning. Accept one of the times they offer you. When they ask for information give: name Marcela Gomez, national ID 30.111.222 (made up), phone 11 5555-0101, coverage OSDE plan 310. When they read the confirmation say that everything is all right, thank them, and say goodbye.",
         "simulation_max_turns": 14,
         "tool_mock_config": {
           "mocking_strategy": "all",
@@ -34,7 +34,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Hola! Te comunicaste con Clínica Demo Palermo, soy Lucía, la asistente virtual. Antes de empezar, te aviso que esta llamada se graba y la procesa una inteligencia artificial solo para gestionar tu consulta, según la Ley 25.326 de datos personales. ¿Estás de acuerdo para seguir?",
+          "message": "Hello! You have reached Demo Palermo Clinic, I am Lucia, the virtual assistant. Before we start, I'm letting you know that this call is recorded and processed by an artificial intelligence only to handle your inquiry, under the Personal Data Protection Act 25.326. Do you agree to continue?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -55,7 +55,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, sí, estoy de acuerdo.",
+          "message": "Hi, yes, I agree.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 6,
@@ -70,7 +70,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[happy] ¡Buenísimo, gracias por confirmar! Te comento que, como esto es una demostración, podés usar datos inventados si preferís para cuidar tu privacidad. Contame, ¿en qué te puedo ayudar hoy?",
+          "message": "[happy] Wonderful, thanks for confirming! Let me mention that, since this is a demonstration, you can use made-up information if you prefer in order to protect your privacy. Tell me, how can I help you today?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -152,7 +152,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, qué tal. Quería sacar un turno para clínica médica, para hacerme un control general. Si puede ser a la mañana, mejor.",
+          "message": "Hello, how's it going. I wanted to book an appointment for general medicine, to get a general checkup. If it can be in the morning, that is better.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 6,
@@ -167,7 +167,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[happy] ¡Hola! Qué bueno que te hagas los controles. Para clínica médica te puedo ofrecer con la doctora Ana Ficticia, que atiende por la mañana los lunes, miércoles y viernes. Por ejemplo, para este viernes veintitrés de octubre tengo libre a las nueve y veinte, a las diez y cuarenta o a las doce y veinte del mediodía. ¿Te sirve alguno de esos horarios?",
+          "message": "[happy] Hello! It's great that you're getting your checkups. For general medicine I can offer you Dr. Ana Fictional, who sees patients in the morning on Mondays, Wednesdays, and Fridays. For example, this Friday, October 23 I have openings at 9:20, at 10:40, or at 12:20 noon. Does any of those times work for you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -248,7 +248,7 @@
           "triggered_guardrails": []
         }
       ],
-      "test_name": "CD01 - Reserva normal (Clínica Médica, OSDE)",
+      "test_name": "CD01 - Standard booking (general medicine, OSDE)",
       "condition_result": {
         "result": "failure",
         "rationale": {

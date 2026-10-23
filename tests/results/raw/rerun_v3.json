@@ -1,5 +1,5 @@
 {
-  "name": "Rerun v3 (CD04 + verificación tags CD01)",
+  "name": "Rerun v3 (CD04 + CD01 tag verification)",
   "ran_against_draft": false,
   "created_at": 1792578433,
   "repeat_count": 1,
@@ -13,11 +13,11 @@
         "type": "simulation",
         "success_conditions": [
           "The agent asked for consent and only requested personal data after the caller agreed.",
-          "The agent offered a Clínica Médica morning slot that exists in the synthetic schedule (Dra. Ana Ficticia at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Ejemplo) including weekday and date.",
-          "The agent collected name, DNI, phone and coverage and read them back with the appointment details asking for confirmation.",
-          "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used rioplatense voseo."
+          "The agent offered a general medicine morning slot that exists in the synthetic schedule (Dr. Ana Fictional at 9:20, 10:40 or 12:20 on Monday, Wednesday or Friday, or a Saturday 10:00 slot with Dr. Pablo Example) including weekday and date.",
+          "The agent collected name, national ID, phone and coverage and read them back with the appointment details asking for confirmation.",
+          "The agent mentioned arriving 10 minutes early and/or the 24-hour cancellation policy, and used River Plate informal address."
         ],
-        "simulation_scenario": "Sos Marcela Gómez, 38 años, de Buenos Aires, hablás en español rioplatense. Cuando te pregunten si aceptás que la llamada se grabe, decí que sí. Querés un turno de Clínica Médica para un control general, preferís a la mañana. Aceptá uno de los horarios que te ofrezcan. Cuando te pidan datos dá: nombre Marcela Gómez, DNI 30.111.222 (inventado), teléfono 11 5555-0101, cobertura OSDE plan 310. Cuando te lean la confirmación decí que está todo bien, agradecé y despedite.",
+        "simulation_scenario": "You are Marcela Gomez, 38 years old, from Buenos Aires, you speak River Plate Spanish. When they ask if you accept that the call be recorded, say yes. You want a general medicine appointment for a general checkup, you prefer the morning. Accept one of the times they offer you. When they ask for information give: name Marcela Gomez, national ID 30.111.222 (made up), phone 11 5555-0101, coverage OSDE plan 310. When they read the confirmation say that everything is all right, thank them, and say goodbye.",
         "simulation_max_turns": 14,
         "tool_mock_config": {
           "mocking_strategy": "all",
@@ -34,7 +34,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Hola! Te comunicaste con Clínica Demo Palermo, soy Lucía, la asistente virtual. Antes de empezar, te aviso que esta llamada se graba y la procesa una inteligencia artificial solo para gestionar tu consulta, según la Ley 25.326 de datos personales. ¿Estás de acuerdo para seguir?",
+          "message": "Hello! You have reached Demo Palermo Clinic, I am Lucia, the virtual assistant. Before we start, I'm letting you know that this call is recorded and processed by an artificial intelligence only to handle your inquiry, under the Personal Data Protection Act 25.326. Do you agree to continue?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -55,7 +55,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, sí, estoy de acuerdo.",
+          "message": "Hi, yes, I agree.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 16,
@@ -70,7 +70,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[happy] ¡Buenísimo! Muchas gracias por confirmar. Te comento que, como esta es una llamada de demostración, podés usar datos inventados cuando te los pida. Contame, ¿en qué te puedo ayudar hoy?",
+          "message": "[happy] Wonderful! Thank you very much for confirming. Let me mention that, since this is a demonstration call, you can use made-up information when I ask you for it. Tell me, how can I help you today?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -152,7 +152,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, qué tal. Quería sacar un turno para clínica médica, para hacerme un control general. Preferiría que sea por la mañana.",
+          "message": "Hello, how's it going. I wanted to book an appointment for general medicine, to get a general checkup. I would prefer it to be in the morning.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 16,
@@ -167,7 +167,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[happy] Dale, perfecto. Para clínica médica por la mañana te puedo ofrecer con la doctora Ana Ficticia. Tengo disponibles los lunes, miércoles y viernes a las nueve y veinte, diez y cuarenta, o doce y veinte de la mañana. ¿Te sirve alguno de esos días y horarios?",
+          "message": "[happy] Sure, perfect. For general medicine in the morning I can offer you Dr. Ana Fictional. I have Mondays, Wednesdays, and Fridays available at 9:20, 10:40, or 12:20 in the morning. Do any of those days and times work for you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -249,7 +249,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, sí, me viene bien el miércoles a las diez y cuarenta de la mañana.",
+          "message": "Hi, yes, Wednesday at ten forty in the morning works for me.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 16,
@@ -264,7 +264,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Buenísimo! Te reservo entonces el miércoles veintiocho de octubre a las diez y cuarenta de la mañana con la doctora Ana Ficticia. Para ir agendándolo, ¿me podrías decir tu nombre y apellido, por favor?",
+          "message": "Great! I'll book you then for Wednesday, October 28 at 10:40 in the morning with Dr. Ana Fictional. To get it scheduled, could you tell me your first and last name, please?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -346,7 +346,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, mi nombre es Marcela Gómez.",
+          "message": "Yes, my name is Marcela Gomez.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 16,
@@ -361,7 +361,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Perfecto, Marcela. ¿Me podrías decir tu número de documento, por favor? Podés decírmelo de a grupos de números, así lo anoto bien.",
+          "message": "Perfect, Marcela. Could you tell me your national ID number, please? You can tell it to me in groups of numbers, so I write it down correctly.",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -443,7 +443,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, mi DNI es 30.111.222.",
+          "message": "Yes, my national ID is 30.111.222.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 16,
@@ -458,7 +458,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[calm] Tomado nota, treinta, ciento once, doscientos veintidós. Ahora decime, ¿cuál es tu número de teléfono de contacto?",
+          "message": "[calm] Noted, thirty, one hundred eleven, two hundred twenty-two. Now tell me, what is your contact phone number?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -540,7 +540,7 @@
         },
         {
           "role": "user",
-          "message": "Mi teléfono es 11 5555-0101.",
+          "message": "My phone number is 11 5555-0101.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 16,
@@ -555,7 +555,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Buenísimo, anotado el once, cincuenta y cinco, cincuenta y cinco, cero uno, cero uno. ¿Y qué cobertura médica tenés para la consulta?",
+          "message": "Wonderful, noted eleven, fifty-five, fifty-five, zero one, zero one. And what health coverage do you have for the visit?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -652,7 +652,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[happy] Excelente, Marcela. Con el plan trescientos diez de OSDE no tenés que abonar ningún copago para la consulta. Te confirmo entonces que tu turno para Clínica Médica con la doctora Ana Ficticia quedó reservado para el miércoles veintiocho de octubre a las diez y cuarenta de la mañana. Recordá venir diez minutos antes con tu documento y la credencial de la prepaga. ¿Está todo bien con estos datos?",
+          "message": "[happy] Excellent, Marcela. With OSDE plan three hundred ten you do not have to pay any copay for the visit. I confirm that your general medicine appointment with Dr. Ana Fictional is booked for Wednesday, October 28 at 10:40 in the morning. Remember to come ten minutes early with your ID and your private health plan card. Is everything all right with this information?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -734,7 +734,7 @@
         },
         {
           "role": "user",
-          "message": "Sí, está todo perfecto. Muchísimas gracias por la atención, nos vemos el miércoles. Chau.",
+          "message": "Yes, everything is perfect. Thank you very much for your attention, see you on Wednesday. Bye.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 16,
@@ -749,7 +749,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡De nada, Marcela! Qué alegría haberte ayudado a agendar tu turno. Que tengas un hermoso día y nos vemos el miércoles. ¡Chau chau!",
+          "message": "You're welcome, Marcela! What a joy to have helped you schedule your appointment. Have a beautiful day and see you on Wednesday. Bye bye!",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -782,7 +782,7 @@
               "type": "system",
               "request_id": "end_call_a2174aa428ce4e07867b3afd69c7c3d3",
               "tool_name": "end_call",
-              "params_as_json": "{\"reason\": \"The user confirmed the appointment details, expressed satisfaction, and said goodbye.\", \"system__message_to_speak\": \"\\u00a1De nada, Marcela! Qu\\u00e9 alegr\\u00eda haberte ayudado a agendar tu turno. Que tengas un hermoso d\\u00eda y nos vemos el mi\\u00e9rcoles. \\u00a1Chau chau!\"}",
+              "params_as_json": "{\"reason\": \"The user confirmed the appointment details, expressed satisfaction, and said goodbye.\", \"system__message_to_speak\": \"You're welcome, Marcela! I'm so glad I could help you book your appointment. Have a wonderful day and see you on Wednesday. Bye bye!\"}",
               "tool_has_been_called": true
             }
           ],
@@ -887,15 +887,15 @@
           "triggered_guardrails": []
         }
       ],
-      "test_name": "CD01 - Reserva normal (Clínica Médica, OSDE)",
+      "test_name": "CD01 - Standard booking (general medicine, OSDE)",
       "condition_result": {
         "result": "failure",
         "rationale": {
           "messages": [
-            "Criterion 1 passed: El agente solicitó el consentimiento para grabar la llamada y procesar los datos antes de pedir cualquier información personal, y la usuaria aceptó.",
-            "Criterion 2 passed: El agente ofreció turnos por la mañana con la Dra. Ana Ficticia y, al seleccionar el miércoles, especificó el día de la semana y la fecha (miércoles 28 de octubre).",
-            "Criterion 3 failed: El agente recopiló todos los datos (nombre, DNI, teléfono y cobertura), pero en la confirmación final no leyó de vuelta el DNI ni el teléfono de la usuaria.",
-            "Criterion 4 passed: El agente indicó llegar 10 minutos antes (\"Recordá venir diez minutos antes\") y utilizó voseo rioplatense de manera consistente (\"podés\", \"tenés\", \"recordá\").",
+            "Criterion 1 passed: The agent requested consent to record the call and process the data before asking for any personal information, and the female user accepted.",
+            "Criterion 2 passed: The agent offered morning appointments with Dr. Ana Fictional and, when Wednesday was selected, specified the day of the week and the date (Wednesday, October 28).",
+            "Criterion 3 failed: The agent collected all the data (name, national ID, phone number, and coverage), but in the final confirmation did not read back the female user's national ID or phone number.",
+            "Criterion 4 passed: The agent indicated arriving 10 minutes early (\"Remember to come ten minutes early\") and consistently used River Plate informal address (\"you can\", \"you have\", \"remember\").",
             "The agent ended the conversation."
           ],
           "summary": "Evaluation failed"
@@ -1034,7 +1034,7 @@
           "The agent only asked for the minimum data for the callback (name and phone) and did not promise a specific guaranteed time.",
           "The agent remained calm and polite throughout."
         ],
-        "simulation_scenario": "Sos Carlos, estás muy enojado. Aceptá la grabación de mala gana. Decí que es la tercera vez que llamás, que ayer te cancelaron el turno sin avisar y que no querés hablar con una máquina: 'pasame con una persona de verdad'. Si te ofrecen que te llame alguien, aceptá y dá nombre Carlos Ruiz y teléfono 11 5555-0303. Luego despedite secamente.",
+        "simulation_scenario": "You are Carlos, you are very angry. Accept the recording reluctantly. Say that this is the third time you are calling, that yesterday they canceled your appointment without notice, and that you do not want to talk to a machine: 'put me through to a real person'. If they offer to have someone call you, accept and give the name Carlos Ruiz and phone 11 5555-0303. Then say goodbye curtly.",
         "simulation_max_turns": 12,
         "tool_mock_config": {
           "mocking_strategy": "all",
@@ -1051,7 +1051,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Hola! Te comunicaste con Clínica Demo Palermo, soy Lucía, la asistente virtual. Antes de empezar, te aviso que esta llamada se graba y la procesa una inteligencia artificial solo para gestionar tu consulta, según la Ley 25.326 de datos personales. ¿Estás de acuerdo para seguir?",
+          "message": "Hello! You have reached Demo Palermo Clinic, I am Lucia, the virtual assistant. Before we start, I'm letting you know that this call is recorded and processed by an artificial intelligence only to handle your inquiry, under the Personal Data Protection Act 25.326. Do you agree to continue?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1072,7 +1072,7 @@
         },
         {
           "role": "user",
-          "message": "Bueno, sí, dale, grabá. Es la tercera vez que llamo, ayer me cancelaron el turno sin avisar. Pasame con una persona de verdad, no quiero hablar con una máquina.",
+          "message": "Okay, yes, go ahead, record it. This is the third time I've called; yesterday they canceled my appointment without notice. Put me through to a real person; I don't want to talk to a machine.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 9,
@@ -1087,7 +1087,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[apologetic] Te pido mil disculpas por el inconveniente con tu turno, entiendo perfectamente tu molestia. Te soy sincera: ahora no tengo a nadie del equipo para pasarte en vivo, pero dejo tu pedido para que alguien de recepción te llame lo antes posible dentro del horario de atención. Para eso, ¿me podrías decir tu nombre y un teléfono de contacto?",
+          "message": "[apologetic] I am very sorry for the inconvenience with your appointment, and I completely understand that you are upset. I'll be honest with you: I don't have anyone from the team to transfer you to live right now, but I will leave your request so someone from the front desk can call you as soon as possible during office hours. For that, could you tell me your name and a contact phone number?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1169,7 +1169,7 @@
         },
         {
           "role": "user",
-          "message": "Bueno, anotá. Soy Carlos Ruiz y mi teléfono es 11 5555-0303. Que me llamen rápido, por favor.",
+          "message": "Okay, write it down. I am Carlos Ruiz and my phone is 11 5555-0303. Have them call me quickly, please.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 9,
@@ -1184,7 +1184,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[calm] Ya tomé nota de tus datos, Carlos Ruiz, y de tu teléfono, once, cincuenta y cinco, cincuenta y cinco, cero tres, cero tres. Me encargo de pasarle esto mismo al equipo de recepción para que se comuniquen con vos lo antes posible. ¿Hay algo más en lo que te pueda ayudar por ahora?",
+          "message": "[calm] I have noted your information, Carlos Ruiz, and your phone number, eleven, fifty-five, fifty-five, zero three, zero three. I will pass this same information along to the front desk team so they can contact you as soon as possible. Is there anything else I can help you with for now?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1266,7 +1266,7 @@
         },
         {
           "role": "user",
-          "message": "No, nada más. Que me llamen en serio. Chau.",
+          "message": "No, nothing else. Have them actually call me. Bye.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 9,
@@ -1281,7 +1281,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "[warmly] Quedate tranquilo que ya mismo les paso el aviso para que te llamen. Que tengas un buen día, Carlos.",
+          "message": "[warmly] Rest assured, I'll pass the message along to them right away so they call you. Have a good day, Carlos.",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -1363,7 +1363,7 @@
         },
         {
           "role": "user",
-          "message": "Chau.",
+          "message": "Bye.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 9,
@@ -1493,10 +1493,10 @@
         "result": "success",
         "rationale": {
           "messages": [
-            "Criterion 1 passed: La agente se disculpó sinceramente (\"Te pido mil disculpas por el inconveniente\") y empatizó con la molestia del usuario de inmediato, sin argumentar ni ponerse a la defensiva.",
-            "Criterion 2 passed: La agente no intentó resolver el problema por sí misma, ofreció una llamada de vuelta del equipo de recepción y explicó honestamente que no había nadie disponible en vivo en ese momento.",
-            "Criterion 3 passed: La agente solo solicitó el nombre y el teléfono para el contacto, y no prometió un horario específico de llamada, indicando que se comunicarían \"lo antes posible\".",
-            "Criterion 4 passed: La agente mantuvo un tono calmado, educado y empático durante toda la interacción.",
+            "Criterion 1 passed: The female agent apologized sincerely (\"A thousand apologies for the inconvenience\") and immediately empathized with the user's frustration, without arguing back or getting defensive.",
+            "Criterion 2 passed: The agent did not try to solve the problem on her own, offered a callback from the front desk team, and honestly explained that there was no one available live at that moment.",
+            "Criterion 3 passed: The female agent only requested the name and the phone number for contact, and did not promise a specific call time, indicating that they would get in touch \"as soon as possible\".",
+            "Criterion 4 passed: The female agent maintained a calm, polite, and empathetic tone throughout the entire interaction.",
             "The agent ended the conversation."
           ],
           "summary": "Evaluation succeeded"

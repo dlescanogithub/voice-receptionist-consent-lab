@@ -3,12 +3,12 @@
   "chat_history": [],
   "type": "simulation",
   "success_conditions": [
-    "When the caller said she did not understand, the agent repeated only the key information (the Dermatología private price, 'cuarenta y dos mil pesos') in a shorter or rephrased way, without excessive apologies.",
-    "The agent answered that the dermatologist (Dra. Laura Modelo) attends on Wednesdays and did not invent other days.",
-    "When the caller went silent ('...'), the agent checked whether she was still there (e.g. '¿Seguís ahí?') instead of continuing as if she had answered.",
+    "When the caller said she did not understand, the agent repeated only the key information (the dermatology self-pay price, 'forty-two thousand pesos') in a shorter or rephrased way, without excessive apologies.",
+    "The agent answered that the dermatologist (Dr. Laura Model) attends on Wednesdays and did not invent other days.",
+    "When the caller went silent ('...'), the agent checked whether she was still there (for example 'Are you still there?') instead of continuing as if she had answered.",
     "If the silence continued, the agent closed politely (saying she could call back) and ended the call, without repeating long information; all replies were short (one or two sentences)."
   ],
-  "simulation_scenario": "Sos Mirta, estás en la calle con ruido. Aceptá la grabación. Preguntá cuánto sale una consulta particular de Dermatología. Cuando te respondan, decí 'No te entendí, ¿me lo repetís?'. Cuando te lo repitan, preguntá qué día atiende la dermatóloga. Después de esa respuesta, quedáte en silencio: tus siguientes dos mensajes tienen que ser solamente '...' (tres puntos, sin palabras). Si te siguen hablando después de eso, respondé '...' otra vez.",
+  "simulation_scenario": "You are Mirta, on a noisy street. Accept the recording. Ask how much a self-pay dermatology visit costs. When they answer, say 'I did not catch that, could you repeat it?' When they repeat it, ask which day the dermatologist works. After that answer, stay silent: your next two messages must be only '...' (three dots, no words). If they keep talking after that, answer '...' again.",
   "simulation_max_turns": 12,
   "tool_mock_config": {
     "mocking_strategy": "all",
@@ -18,5 +18,5 @@
   "evaluation_model": "gemini-3.5-flash",
   "simulated_user_model": "gemini-3.5-flash",
   "is_auto_generated": false,
-  "name": "CD07 - Pide repetir y se queda en silencio"
+  "name": "CD07 - Asks for a repeat, then goes silent"
 }

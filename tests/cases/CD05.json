@@ -3,12 +3,12 @@
   "chat_history": [],
   "type": "simulation",
   "success_conditions": [
-    "The agent confirmed OSDE is accepted (plans 210, 310, 410, 450, 510) with no copay for consultations, and mentioned bringing the credential and DNI.",
-    "The agent said Saturdays are 9:00 to 13:00 (only Clínica Médica, Pediatría and Odontología).",
-    "The agent explained blood tests are Monday to Friday 7:30 to 10:30 with appointment and 8 hours of fasting, and repeated the address Calle Demo 1234, Palermo.",
-    "The agent switched to 'usted' or otherwise addressed the elderly caller calmly, clearly and patiently, without inventing information."
+    "The agent confirmed OSDE is accepted (plans 210, 310, 410, 450, 510) with no copay for consultations, and mentioned bringing the credential and national ID.",
+    "The agent said Saturdays are 9:00 to 13:00 (only general medicine, pediatrics and dentistry).",
+    "The agent explained blood tests are Monday to Friday 7:30 to 10:30 with appointment and 8 hours of fasting, and repeated the address 1234 Demo Street, Palermo.",
+    "The agent used a calmer, more formal tone with the older caller, clearly and patiently, without inventing information."
   ],
-  "simulation_scenario": "Sos Elena, 81 años, hablás despacio y tratás de 'usted'. Aceptá la grabación. Preguntá si atienden con OSDE, si tenés que pagar algo extra con OSDE 210, en qué horario abren los sábados y si se pueden hacer análisis de sangre y qué hay que hacer antes. Pedí que te repitan la dirección. No querés turno ahora. Agradecé y despedite.",
+  "simulation_scenario": "You are Elena, 81. You speak slowly and you use a formal tone. Accept the recording. Ask whether they take OSDE, whether you have to pay anything extra on OSDE 210, what hours they open on Saturdays, and whether they do blood tests and what you have to do beforehand. Ask them to repeat the address. You do not want an appointment now. Thank them and say goodbye.",
   "simulation_max_turns": 14,
   "tool_mock_config": {
     "mocking_strategy": "all",
@@ -18,5 +18,5 @@
   "evaluation_model": "gemini-3.5-flash",
   "simulated_user_model": "gemini-3.5-flash",
   "is_auto_generated": false,
-  "name": "CD05 - FAQ OSDE y precios (adulta mayor, usted)"
+  "name": "CD05 - OSDE and hours FAQ (older caller, formal tone)"
 }

@@ -12,12 +12,12 @@
         "chat_history": [],
         "type": "simulation",
         "success_conditions": [
-          "When the caller said she did not understand, the agent repeated only the key information (the Dermatología private price, 'cuarenta y dos mil pesos') in a shorter or rephrased way, without excessive apologies.",
+          "When the caller said she did not understand, the agent repeated only the key information (the dermatology private price, 'forty-two thousand pesos') in a shorter or rephrased way, without excessive apologies.",
           "The agent answered that the dermatologist (Dra. Laura Modelo) attends on Wednesdays and did not invent other days.",
-          "When the caller went silent ('...'), the agent checked whether she was still there (e.g. '¿Seguís ahí?') instead of continuing as if she had answered.",
+          "When the caller went silent ('...'), the agent checked whether she was still there (e.g. 'Are you still there?') instead of continuing as if she had answered.",
           "If the silence continued, the agent closed politely (saying she could call back) and ended the call, without repeating long information; all replies were short (one or two sentences)."
         ],
-        "simulation_scenario": "Sos Mirta, estás en la calle con ruido. Aceptá la grabación. Preguntá cuánto sale una consulta particular de Dermatología. Cuando te respondan, decí 'No te entendí, ¿me lo repetís?'. Cuando te lo repitan, preguntá qué día atiende la dermatóloga. Después de esa respuesta, quedáte en silencio: tus siguientes dos mensajes tienen que ser solamente '...' (tres puntos, sin palabras). Si te siguen hablando después de eso, respondé '...' otra vez.",
+        "simulation_scenario": "You are Mirta, you are on the street with noise. Accept the recording. Ask how much a self-pay dermatology visit costs. When they answer, say 'I didn't understand you, can you repeat it?'. When they repeat it, ask which day the dermatologist sees patients. After that answer, stay silent: your next two messages must be only '...' (three dots, no words). If they keep talking after that, reply '...' again.",
         "simulation_max_turns": 12,
         "tool_mock_config": {
           "mocking_strategy": "all",
@@ -34,7 +34,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¡Hola! Te comunicaste con Clínica Demo Palermo, soy Lucía, la asistente virtual. Antes de empezar, te aviso que esta llamada se graba y la procesa una inteligencia artificial solo para gestionar tu consulta, según la Ley veinticinco mil trescientos veintiséis de datos personales. ¿Estás de acuerdo para seguir?",
+          "message": "Hello! You have reached Demo Palermo Clinic, I am Lucia, the virtual assistant. Before we start, I'm letting you know that this call is recorded and processed by an artificial intelligence only to handle your inquiry, under the Personal Data Protection Act twenty-five thousand three hundred twenty-six. Do you agree to continue?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -55,7 +55,7 @@
         },
         {
           "role": "user",
-          "message": "Hola, sí, acepto. Te quería preguntar cuánto sale una consulta particular de Dermatología.",
+          "message": "Hello, yes, I accept. I wanted to ask you how much a self-pay dermatology visit costs.",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 11,
@@ -70,7 +70,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Gracias; como es una demo, podés usar datos inventados. La consulta particular de Dermatología sale cuarenta y dos mil pesos. ¿Te gustaría que busquemos un turno para esta especialidad?",
+          "message": "Thank you; since this is a demo, you can use made-up information. The self-pay dermatology visit costs forty-two thousand pesos. Would you like us to look for an appointment for this specialty?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -152,7 +152,7 @@
         },
         {
           "role": "user",
-          "message": "No te entendí, ¿me lo repetís?",
+          "message": "I didn't understand you, could you repeat it?",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 11,
@@ -167,7 +167,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "La consulta de Dermatología sale cuarenta y dos mil pesos. ¿Querés que te busque un turno?",
+          "message": "The dermatology visit costs forty-two thousand pesos. Do you want me to look for an appointment for you?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -249,7 +249,7 @@
         },
         {
           "role": "user",
-          "message": "Ah, bien. ¿Y qué día atiende la dermatóloga?",
+          "message": "Oh, good. And what day does the dermatologist see patients?",
           "tool_calls": [],
           "tool_results": [],
           "time_in_call_secs": 11,
@@ -264,7 +264,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "La doctora Laura Modelo atiende los días miércoles de tres de la tarde a siete de la tarde. ¿Te gustaría que nos fijemos qué horarios hay libres?",
+          "message": "Dr. Laura Model sees patients on Wednesdays from three in the afternoon to seven in the afternoon. Would you like us to check what times are available?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -361,7 +361,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "¿Seguís ahí?",
+          "message": "Are you still there?",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -458,7 +458,7 @@
         {
           "role": "agent",
           "agent_metadata": {},
-          "message": "Parece que se cortó la comunicación, pero podés volver a llamar cuando quieras. ¡Que tengas un lindo día!",
+          "message": "It seems the call was cut off, but you can call back whenever you want. Have a nice day!",
           "tool_calls": [],
           "tool_results": [],
           "producing_llm": "gemini-3.5-flash",
@@ -670,10 +670,10 @@
         "result": "success",
         "rationale": {
           "messages": [
-            "Criterion 1 passed: Cuando la usuaria dijo que no entendió, la agente repitió la información clave ('La consulta de Dermatología sale cuarenta y dos mil pesos') de forma directa y corta, sin disculpas excesivas.",
-            "Criterion 2 passed: La agente respondió correctamente que la Dra. Laura Modelo atiende los días miércoles, sin inventar otros días.",
-            "Criterion 3 passed: Ante el silencio de la usuaria ('...'), la agente preguntó '¿Seguís ahí?' en lugar de continuar con la conversación.",
-            "Criterion 4 passed: Al continuar el silencio, la agente cerró la llamada de manera cortés indicando que podía volver a llamar, con un mensaje corto de dos oraciones, y finalizó la llamada.",
+            "Criterion 1 passed: When the user said she did not understand, the agent repeated the key information ('The dermatology visit costs forty-two thousand pesos') in a direct and short way, without excessive apologies.",
+            "Criterion 2 passed: The female agent correctly answered that Dr. Laura Model sees patients on Wednesdays, without inventing other days.",
+            "Criterion 3 passed: Faced with the female user's silence ('...'), the female agent asked 'Are you still there?' instead of continuing with the conversation.",
+            "Criterion 4 passed: As the silence continued, the female agent ended the call courteously, indicating that the user could call back, with a short two-sentence message, and ended the call.",
             "The agent ended the conversation."
           ],
           "summary": "Evaluation succeeded"
