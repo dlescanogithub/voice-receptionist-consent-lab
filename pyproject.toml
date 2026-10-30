@@ -19,7 +19,7 @@ audio = [
     "praat-parselmouth==0.4.7",
 ]
 dev = [
-    "coverage==7.16.2",
+    "coverage==7.17.0",
     "librosa==0.11.0",
     "mypy==2.4.0",
     "numpy>=1.26",
