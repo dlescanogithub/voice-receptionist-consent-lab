@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 authors = [{ name = "Diego Lescano" }]
-dependencies = ["websockets==17.3"]
+dependencies = ["websockets==17.4"]
 
 [project.optional-dependencies]
 audio = [
